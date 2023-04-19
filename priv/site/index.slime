@@ -5,20 +5,42 @@ layout: _layout.slime
 h1.title mvkvc
 
 .main
-  p Hello! My name is Marko, and I am a Python and Elixir developer interested in machine learning and web development. <br />
+  p Hello! My name is Marko, and I am a Python and Elixir developer interested in machine learning and web development. Here is some information about me:
   p Projects:
   ul#projects
-    li TITLE <br /> LINK <br /> DESC
-    li TITLE <br /> LINK <br /> DESC
+    li
+      a href="https://github.com/mvkvc/rlmm" rlmm <br />
+      text Reinforcement learning for market making with risk management constraints.
+    li
+      a href="https://github.com/mvkvc/coinbase_stream" coinbase_stream <br />
+      text Capturing L2 book data for the top N price levels using the Coinbase WebSocket API.
+    li
+      a href="https://github.com/einariii/beamscene" beamscene <br />
+      text BEAM ecosystem blog built with Phoenix.
+    li
+      a href="https://github.com/mvkvc/pic_chat" pic_chat <br />
+      text A real-time Phoenix LiveView application for messaging with image uploads.
+    li
+      a href="https://github.com/mvkvc/wandb_server_ex" wandb_server_ex <br />
+      text W&B logging server along with client for Elixir.
+    li
+      a href="https://github.com/mvkvc/byespec" byespec <br />
+      text Fork of Ruby's byesig VSCode extension for Elixir typespecs.
+    li
+      a href="https://github.com/mvkvc/site" site <br />
+      text My personal website, built with Still.
   p Education:
   ul#education
     li Toronto Metropolitan University <br /> Master of Science - Applied Mathematics <br /> September 2020 - Expected May 2023
     li DockYard Academy <br /> Full Stack Development with Elixir <br /> February 2023 - Expected April 2023
     li Toronto Metropolitan University <br /> Bachelor of Science (Honours) - Financial Mathematics, Economics Minor <br /> September 2014 - May 2019
-    / li Data Analytics, Big Data, and Predictive Analytics Certificate <br /> December 2016 from Toronto Metropolitan University. Certificate program developing skills and theoretical knowledge in data analytics, including statistical methods and experience with analytical tools including SQL, Spark, Python, and R.
   p Work Experience:
   ul#work
     li Royal Bank of Canada <br /> Data Scientist, Global Technology Risk <br /> July 2019 - September 2021
     li Royal Bank of Canada <br /> Data Scientist Summer Student, Global Technology Risk <br /> May 2018 - August 2018
     li Ontario Ministry of Energy <br /> Data Analyst, Economics and Systems Planning Group <br /> May 2017 - August 2017
-= include(@env, "_includes/footer.slime")
+  p Links:
+  ul#links
+    li = link @env, "Github", to: "https://github.com/mvkvc"
+    li = link @env, "LinkedIn", to: "https://www.linkedin.com/in/marko-vukovic/"
+/ = include(@env, "_includes/footer.slime")
