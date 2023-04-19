@@ -38,3 +38,7 @@ p {
   padding: 1rem;
   font-size: 14px;
 }
+
+li {
+  margin-bottom: 0.5rem;
+}

@@ -6,36 +6,48 @@ h1.title mvkvc
 
 .main
   p Hello! My name is Marko and I am a software developer using mostly Python and Elixir to explore my interests including machine learning and web development. Here is some information about me:
+  / p Reading:
+  / ul#reading
+  /   li
+  /     a href="https://us.macmillan.com/books/9781250284297/cobaltred" Cobalt Red
   p Projects:
   ul#projects
     li
       a href="https://github.com/mvkvc/rlmm" rlmm <br />
       text Reinforcement learning for market making with risk management constraints. <br />
-      / text Used: Python, Nbdev, PyTorch, Pandas, NumPy, Matplotlib
+      text Uses: Python, Nbdev, Gym, PyTorch, Pandas, NumPy, Matplotlib
     li
       a href="https://github.com/mvkvc/logseq_chat" logseq_chat <br />
-      text AI chatbot for user provided Logseq notes.
+      text AI chatbot for user provided Logseq notes. <br />
+      text Uses: Elixir, Phoenix, LiveView, Bumblebee, Hugging Face
     li
       a href="https://github.com/mvkvc/coinbase_stream" coinbase_stream <br />
-      text Capturing level 2 Coinbase order book data using their WebSocket API.
+      text Capturing level 2 Coinbase order book data using their WebSocket API. <br />
+      text Uses: Python, WebSockets, Asyncio, Azure, Databricks
     li
       a href="https://github.com/mvkvc/fin_view" fin_view <br />
-      text Mortgage product query and comparison tool.
+      text Mortgage product query and comparison tool. <br />
+      text Uses: Elixir, Phoenix, LiveView, TailwindCSS
     li
       a href="https://github.com/einariii/beamscene" beamscene <br />
-      text BEAM (Erlang VM) ecosystem blog.
+      text BEAM (Erlang VM) ecosystem blog. <br />
+      text Uses: Elixir, Phoenix, TailwindCSS
     li
       a href="https://github.com/mvkvc/pic_chat" pic_chat <br />
-      text Messaging application with image upload support.
+      text Messaging application with image upload support. <br />
+      text Uses: Elixir, Phoenix, LiveView, TailwindCSS
     li
       a href="https://github.com/mvkvc/wandb_server_ex" wandb_server_ex <br />
-      text Local W&B logging server with an Elixir client.
+      text Local W&B logging server with an Elixir client. <br />
+      text Uses: Python, W&B, FastAPI, Elixir
     li
       a href="https://github.com/mvkvc/byespec" byespec <br />
-      text Fork of Ruby's byesig VSCode extension for hiding Elixir typespecs.
+      text Fork of Ruby's byesig VSCode extension for hiding Elixir typespecs. <br />
+      text Uses: JavaScript, VSCode
     li
       a href="https://github.com/mvkvc/site" site <br />
-      text My personal website.
+      text My personal website. <br />
+      text Uses: Elixir, Still, Slime
   p Education:
   ul#education
     li Toronto Metropolitan University <br /> Master of Science - Applied Mathematics <br /> September 2020 - Expected May 2023
