@@ -5,7 +5,7 @@ layout: _layout.slime
 h1.title mvkvc
 
 .main
-  p Hello! My name is Marko, and I am a Python and Elixir developer interested in machine learning and web development. Here is some information about me:
+  p Hello! My name is Marko and I am a software developer using mostly Python and Elixir to explore my interests including machine learning and web development.. Here is some information about me:
   p Projects:
   ul#projects
     li
