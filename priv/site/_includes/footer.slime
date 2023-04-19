@@ -1,6 +1,5 @@
 footer
-  / p Relevant links:
-  / nav
-  /   ul
-  /     li = link @env, "Docs", to: "https://hexdocs.pm/still/"
-  /     li = link @env, "Github", to: "https://github.com/still-ex/still"
+  p Links:
+  ul
+    li = link @env, "Github", to: "https://github.com/mvkvc"
+    li = link @env, "LinkedIn", to: "https://www.linkedin.com/in/marko-vukovic/"

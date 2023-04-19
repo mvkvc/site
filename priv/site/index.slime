@@ -2,16 +2,23 @@
 layout: _layout.slime
 ---
 
-h1.title Welcome to Marko's Personal Site!
+h1.title mvkvc
 
 .main
   p Hello! My name is Marko, and I am a Python and Elixir developer interested in machine learning and web development. <br />
   p Projects:
-  ul#project
-    li Machine Learning Image Classifier <br /> Utilized Python and TensorFlow to develop an image classifier with a 95% accuracy rate on a dataset of 10,000 images.
-    li Elixir Web Application <br /> Created a responsive and efficient web application using Elixir and the Phoenix Framework, implementing authentication and real-time chat features.
-  p CV:
-  ul#resume
-    li Bachelor of Science in Computer Science <br /> Graduated with honors from XYZ University, focusing on machine learning and web development.
-    li Software Development Intern <br /> Completed a summer internship at ABC Company, where I contributed to the development of an internal web application using Python and Django.
+  ul#projects
+    li TITLE <br /> LINK <br /> DESC
+    li TITLE <br /> LINK <br /> DESC
+  p Education:
+  ul#education
+    li Toronto Metropolitan University <br /> Master of Science - Applied Mathematics <br /> September 2020 - Expected May 2023
+    li DockYard Academy <br /> Full Stack Development with Elixir <br /> February 2023 - Expected April 2023
+    li Toronto Metropolitan University <br /> Bachelor of Science (Honours) - Financial Mathematics, Economics Minor <br /> September 2014 - May 2019
+    / li Data Analytics, Big Data, and Predictive Analytics Certificate <br /> December 2016 from Toronto Metropolitan University. Certificate program developing skills and theoretical knowledge in data analytics, including statistical methods and experience with analytical tools including SQL, Spark, Python, and R.
+  p Work Experience:
+  ul#work
+    li Royal Bank of Canada <br /> Data Scientist, Global Technology Risk <br /> July 2019 - September 2021
+    li Royal Bank of Canada <br /> Data Scientist Summer Student, Global Technology Risk <br /> May 2018 - August 2018
+    li Ontario Ministry of Energy <br /> Data Analyst, Economics and Systems Planning Group <br /> May 2017 - August 2017
 = include(@env, "_includes/footer.slime")
