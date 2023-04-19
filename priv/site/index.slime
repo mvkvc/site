@@ -2,9 +2,16 @@
 layout: _layout.slime
 ---
 
-h1.title Welcome to Still
+h1.title Welcome to Marko's Personal Site!
 
 .main
-  p Hello! <br /> This is your starter to create something beautiful.
-
-  = include(@env, "_includes/footer.slime")
+  p Hello! My name is Marko, and I am a Python and Elixir developer interested in machine learning and web development. <br />
+  p Projects:
+  ul#project
+    li Machine Learning Image Classifier <br /> Utilized Python and TensorFlow to develop an image classifier with a 95% accuracy rate on a dataset of 10,000 images.
+    li Elixir Web Application <br /> Created a responsive and efficient web application using Elixir and the Phoenix Framework, implementing authentication and real-time chat features.
+  p CV:
+  ul#resume
+    li Bachelor of Science in Computer Science <br /> Graduated with honors from XYZ University, focusing on machine learning and web development.
+    li Software Development Intern <br /> Completed a summer internship at ABC Company, where I contributed to the development of an internal web application using Python and Django.
+= include(@env, "_includes/footer.slime")
