@@ -5,30 +5,37 @@ layout: _layout.slime
 h1.title mvkvc
 
 .main
-  p Hello! My name is Marko and I am a software developer using mostly Python and Elixir to explore my interests including machine learning and web development.. Here is some information about me:
+  p Hello! My name is Marko and I am a software developer using mostly Python and Elixir to explore my interests including machine learning and web development. Here is some information about me:
   p Projects:
   ul#projects
     li
       a href="https://github.com/mvkvc/rlmm" rlmm <br />
-      text Reinforcement learning for market making with risk management constraints.
+      text Reinforcement learning for market making with risk management constraints. <br />
+      / text Used: Python, Nbdev, PyTorch, Pandas, NumPy, Matplotlib
+    li
+      a href="https://github.com/mvkvc/logseq_chat" logseq_chat <br />
+      text AI chatbot for user provided Logseq notes.
     li
       a href="https://github.com/mvkvc/coinbase_stream" coinbase_stream <br />
-      text Capturing L2 book data for the top N price levels using the Coinbase WebSocket API.
+      text Capturing level 2 Coinbase order book data using their WebSocket API.
+    li
+      a href="https://github.com/mvkvc/fin_view" fin_view <br />
+      text Mortgage product query and comparison tool.
     li
       a href="https://github.com/einariii/beamscene" beamscene <br />
-      text BEAM ecosystem blog built with Phoenix.
+      text BEAM (Erlang VM) ecosystem blog.
     li
       a href="https://github.com/mvkvc/pic_chat" pic_chat <br />
-      text A real-time Phoenix LiveView application for messaging with image uploads.
+      text Messaging application with image upload support.
     li
       a href="https://github.com/mvkvc/wandb_server_ex" wandb_server_ex <br />
-      text W&B logging server along with client for Elixir.
+      text Local W&B logging server with an Elixir client.
     li
       a href="https://github.com/mvkvc/byespec" byespec <br />
-      text Fork of Ruby's byesig VSCode extension for Elixir typespecs.
+      text Fork of Ruby's byesig VSCode extension for hiding Elixir typespecs.
     li
       a href="https://github.com/mvkvc/site" site <br />
-      text My personal website, built with Still.
+      text My personal website.
   p Education:
   ul#education
     li Toronto Metropolitan University <br /> Master of Science - Applied Mathematics <br /> September 2020 - Expected May 2023
