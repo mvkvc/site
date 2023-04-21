@@ -5,11 +5,8 @@ layout: _layout.slime
 h1.title mvkvc
 
 .main
-  p Hello! My name is Marko and I am a software developer using mostly Python and Elixir to explore my interests including machine learning and web development. Here is some information about me:
-  / p Reading:
-  / ul#reading
-  /   li
-  /     a href="https://us.macmillan.com/books/9781250284297/cobaltred" Cobalt Red
+  p Hello! My name is Marko and I am a software developer using mainly Python and Elixir to explore my interests including machine learning and web development. Here is some information about me:
+
   p Projects:
   ul#projects
     li
@@ -17,13 +14,17 @@ h1.title mvkvc
       text Reinforcement learning for market making with risk management constraints. <br />
       text Uses: Python, Nbdev, Gym, PyTorch, Pandas, NumPy, Matplotlib
     li
-      a href="https://github.com/mvkvc/logseq_chat" logseq_chat <br />
-      text AI chatbot for user provided Logseq notes. <br />
-      text Uses: Elixir, Phoenix, LiveView, Bumblebee, Hugging Face
-    li
       a href="https://github.com/mvkvc/coinbase_stream" coinbase_stream <br />
       text Capturing level 2 Coinbase order book data using their WebSocket API. <br />
       text Uses: Python, WebSockets, Asyncio, Azure, Databricks
+    li
+      a href="https://github.com/mvkvc/nano_gpt_ex" nano_gpt_ex <br />
+      text Implementation of Andrei Karpathy's NanoGPT in Elixir. <br />
+      text Uses: Elixir, Livebook, Nx, Axon, Hugging Face
+    li
+      a href="https://github.com/mvkvc/teller_bank_job" teller_bank_job <br />
+      text My submission for the Teller Bank Job challenge for ElixirConf EU 2023. <br />
+      text Uses: Elixir, Livebook, Hugging Face
     li
       a href="https://github.com/mvkvc/fin_view" fin_view <br />
       text Mortgage product query and comparison tool. <br />
