@@ -1,8 +1,12 @@
+name: deploy
+
 on:
   workflow_dispatch:
   push:
     branches:
       - main
+    paths:
+      - "priv/**"
 
 env:
   ELIXIR_VERSION: 1.14
