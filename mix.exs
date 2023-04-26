@@ -28,7 +28,8 @@ defmodule Site.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:still, "~> 0.8.0"}
+      {:still, "~> 0.8.0"},
+      {:tailwind, "~> 0.1.9", runtime: Mix.env() == :dev}
     ]
   end
 end

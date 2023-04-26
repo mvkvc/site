@@ -1,5 +1,0 @@
-footer
-  p Links:
-  ul
-    li = link @env, "Github", to: "https://github.com/mvkvc"
-    li = link @env, "LinkedIn", to: "https://www.linkedin.com/in/marko-vukovic/"
