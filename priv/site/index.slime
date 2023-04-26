@@ -6,7 +6,7 @@ div
   h1.text-center.text-4xl.mb-6 Marko Vukovic
 
 div
-  p.text-lg.mb-4 Hello! My name is Marko and I am a software developer using mainly Python and Elixir to explore my interests including machine learning and web development. Here is some information about me:
+  p.mb-4 Hello! My name is Marko and I am a software developer using mainly Python and Elixir to explore my interests including machine learning and web development. Here is some information about me:
 
 div
   p.font-bold.text-lg.mb-2 Projects:
@@ -64,7 +64,7 @@ div
     li Royal Bank of Canada <br /> Data Scientist Summer Student, Global Technology Risk <br /> May 2018 - August 2018
     li Ontario Ministry of Energy <br /> Data Analyst, Economics and Systems Planning Group <br /> May 2017 - August 2017
 div
-  p.font-bold Links:
+  p.font-bold.text-lg.mb-2 Links:
   ul.list-disc.pl-4
     li.hover:underline = link @env, "Github", to: "https://github.com/mvkvc"
     li.hover:underline = link @env, "LinkedIn", to: "https://www.linkedin.com/in/marko-vukovic/"
