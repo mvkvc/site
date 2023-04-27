@@ -2,6 +2,7 @@ import Config
 
 config :still,
   dev_layout: false,
+  pass_through_copy: ["assets/fontello"],
   input: Path.join(Path.dirname(__DIR__), "priv/site"),
   output: Path.join(Path.dirname(__DIR__), "_site")
 

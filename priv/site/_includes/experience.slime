@@ -1,0 +1,18 @@
+div
+  p.text-2xl.mb-2 Professional Experience:
+  ul.list-disc.pl-6.space-y-2
+    li
+      div
+        text.font-semibold Royal Bank of Canada <br />
+        text.italic July 2019 - September 2021 <br />
+        text Data Scientist, Global Technology Risk
+    li
+      div
+        text.font-semibold Royal Bank of Canada <br />
+        text.italic May 2018 - August 2018 <br />
+        text Data Scientist Summer Student, Global Technology Risk
+    li
+      div
+        text.font-semibold Ontario Ministry of Energy <br />
+        text.italic May 2017 - August 2017 <br />
+        text Data Analyst, Economics and Systems Planning Group
