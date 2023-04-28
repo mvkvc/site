@@ -31,14 +31,6 @@ div
     /   text Mortgage product query and comparison tool. <br />
     /   text.italic Uses: Elixir, Phoenix, LiveView, TailwindCSS
     li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/pic_chat" pic_chat <br />
-      text Messaging application with image upload support. <br />
-      text.italic Uses: Elixir, Phoenix, LiveView, TailwindCSS
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/einariii/beamscene" beamscene <br />
-      text BEAM ecosystem blog. <br />
-      text.italic Uses: Elixir, Phoenix, TailwindCSS
-    li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/articuno" articuno <br />
       text Elixir library to freeze your Phoenix application into a static site. <br />
       text.italic Uses: Elixir, HTTPoison, Phoenix
@@ -46,6 +38,14 @@ div
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/kubo_ex" kubo_ex <br />
       text Elixir library for interacting with a Kubo IPFS node.  <br />
       text.italic Uses: Elixir, HTTPoison, IPFS
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/pic_chat" pic_chat <br />
+      text Messaging application with image upload support. <br />
+      text.italic Uses: Elixir, Phoenix, LiveView, TailwindCSS
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/einariii/beamscene" beamscene <br />
+      text BEAM ecosystem blog. <br />
+      text.italic Uses: Elixir, Phoenix, TailwindCSS
     li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/bank_crawl" bank_crawl <br />
       text CLI to crawl central bank press releases. <br />
