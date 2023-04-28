@@ -9,68 +9,68 @@ div
     li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/coinbase_stream" coinbase_stream <br />
       text Capturing level 2 Coinbase order book data using their WebSocket API. <br />
-      text.italic Uses: Python, WebSockets, Asyncio, Azure, Databricks
+      text.italic Uses: Python, WebSockets, Asyncio, Azure
     li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/nano_gpt_ex" nano_gpt_ex <br />
       text Implementation of NanoGPT in Elixir. <br />
       text.italic Uses: Elixir, Livebook, Nx, Axon, Hugging Face
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/wandb_server_ex" wandb_server_ex <br />
+      text Local W&B logging server along with client for Elixir. <br />
+      text.italic Uses: Elixir, HTTPoison, Python, FastAPI, mitmproxy
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/lbdev" lbdev <br />
+      text Create and publish Elixir libraries using Livebooks. <br />
+      text.italic Uses: Elixir, Livebook
     / li
-    /   a href="https://github.com/mvkvc/statistical_rethinking_ex " statistical_rethinking_ex  <br />
+    /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/statistical_rethinking_ex " statistical_rethinking_ex  <br />
     /   text Elixir implementation for the book Statistical Rethinking, 2nd Edition. <br />
-    /   text Uses: Elixir, Livebook, Lbdev, Nx
+    /   text.italic Uses: Elixir, Livebook, Lbdev, Nx
+    / li
+    /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/fin_view" fin_view <br />
+    /   text Mortgage product query and comparison tool. <br />
+    /   text.italic Uses: Elixir, Phoenix, LiveView, TailwindCSS
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/pic_chat" pic_chat <br />
+      text Messaging application with image upload support. <br />
+      text.italic Uses: Elixir, Phoenix, LiveView, TailwindCSS
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/einariii/beamscene" beamscene <br />
+      text BEAM ecosystem blog. <br />
+      text.italic Uses: Elixir, Phoenix, TailwindCSS
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/articuno" articuno <br />
+      text Elixir library to freeze your Phoenix application into a static site. <br />
+      text.italic Uses: Elixir, HTTPoison, Phoenix
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/kubo_ex" kubo_ex <br />
+      text Elixir library for interacting with a Kubo IPFS node.  <br />
+      text.italic Uses: Elixir, HTTPoison, IPFS
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/bank_crawl" bank_crawl <br />
+      text CLI to crawl central bank press releases. <br />
+      text.italic Uses: Elixir, Floki, Burrito
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/games_cli" games_cli <br />
+      text CLI for playing games including Wordle.<br />
+      text.italic Uses: Elixir, Burrito
     li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/teller_bank_job" teller_bank_job <br />
       text My submission for the Teller Bank Job challenge held during ElixirConf EU 2023. <br />
       text.italic Uses: Elixir, Livebook, Hugging Face
     li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/reel_hiring_project_elixir " reel_hiring_project_elixir  <br />
-      text  Reel Energy senior software engineer take-home assignment.<br />
+      text  Reel Energy senior software engineer take-home evaluation.<br />
       text.italic Uses: Elixir
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/bank_crawl" bank_crawl <br />
-      text CLI to crawl central bank press releases. <br />
-      text Uses: Elixir, Floki
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/games_cli" games_cli <br />
-      text CLI for playing games including Wordle.<br />
-      text.italic Uses: Elixir, Burrito
-    / li
-    /   a href="https://github.com/mvkvc/fin_view" fin_view <br />
-    /   text Mortgage product query and comparison tool. <br />
-    /   text Uses: Elixir, Phoenix, LiveView, TailwindCSS
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/lbdev" lbdev <br />
-      text Write Elixir libraries using Livebooks. <br />
-      text.italic Uses: Elixir, Livebook
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/wandb_server_ex" wandb_server_ex <br />
-      text Local W&B logging server along with client for Elixir. <br />
-      text.italic Uses: Elixir, HTTPoison, Python, FastAPI
-    / li
-    /   a href="https://github.com/mvkvc/articuno" articuno <br />
-    /   text Freeze your Phoenix application into a static site. <br />
-    /   text Uses: Elixir, Phoenix
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/einariii/beamscene" beamscene <br />
-      text BEAM ecosystem blog. <br />
-      text.italic Uses: Elixir, Phoenix, TailwindCSS
-    / li
-    /   a.text-indigo-500.hover:text-indigo-800 href="https://github.com/mvkvc/pic_chat" pic_chat <br />
-    /   text Messaging application with image upload support. <br />
-    /   text Uses: Elixir, Phoenix, LiveView, TailwindCSS
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/kubo_ex" kubo_ex <br />
-      text Elixir library for interacting with a Kubo IPFS node.  <br />
-      text.italic Uses: Elixir, HTTPoison, IPFS
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/byespec" byespec <br />
-      text Fork of Ruby's byesig VSCode extension for hiding Elixir typespecs. <br />
-      text.italic Uses: JavaScript, VSCode
-    li
-      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/actions_elixir" actions_elixir <br />
-      text GitHub Actions for common Elixir CI operations. . <br />
-      text.italic Uses: GitHub Actions
     li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/site" site <br />
       text My personal website. <br />
-      text.italic Uses: Elixir, Still, Slime
+      text.italic Uses: Elixir, Slime, Still, TailwindCSS
+    / li
+    /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/byespec" byespec <br />
+    /   text Fork of Ruby's `byesig` VSCode extension to hide Elixir typespecs. <br />
+    /   text.italic Uses: JavaScript
+    / li
+    /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/actions_elixir" actions_elixir <br />
+    /   text GitHub Actions for common Elixir CI tasks. <br />
+    /   text.italic Uses: GitHub Actions

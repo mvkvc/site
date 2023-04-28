@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - "priv/**"
+      - "priv/site/**"
 
 env:
   ELIXIR_VERSION: 1.14
