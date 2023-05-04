@@ -9,6 +9,5 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     = link_to_css @env, "assets/css/output.css", media: "all"
     = link_to_css @env, "assets/fontello/css/socials.css", media: "all"
-  / body.bg-slate-800.text-neutral-300.text-lg.flex-col.space-y-4.m-10.mb-4
   body.bg-slate-800.text-lg.flex-col.space-y-4.m-10.mb-4.text-neutral-300
     = @children

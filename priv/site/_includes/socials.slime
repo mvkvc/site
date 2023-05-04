@@ -4,5 +4,5 @@ div
       a.icon-github-circled href="https://github.com/mvkvc" target="_blank"
     div.mr-4
       a.icon-linkedin-squared href="https://www.linkedin.com/in/marko-vukovic" target="_blank"
-    div
-      a.icon-twitter href="https://twitter.com/m_vkvc" target="_blank"
+    / div
+    /   a.icon-twitter href="https://twitter.com/m_vkvc" target="_blank"
