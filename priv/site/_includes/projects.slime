@@ -66,6 +66,10 @@ div
     /   text Web application for viewing live stock price data from Fortune 500 companies. <br />
     /   text.italic Uses: Elixir, Phoenix, LiveView, TailwindCSS
     li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/fake_slack" fake_slack <br />
+      text TCP chat server with rooms and server commands. <br />
+      text.italic Uses: Elixir
+    li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/bank_crawl" bank_crawl <br />
       text CLI to crawl central bank press releases. <br />
       text.italic Uses: Elixir, Floki, Burrito
