@@ -13,10 +13,10 @@ div
     /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/lbdev" lbdev <br />
     /   text Create and publish Elixir libraries using Livebooks. <br />
     /   text.italic Uses: Elixir, Livebook
-    / li
-    /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/statistical_rethinking_ex " statistical_rethinking_ex  <br />
-    /   text Elixir implementation for the book Statistical Rethinking, 2nd Edition. <br />
-    /   text.italic Uses: Elixir
+    li
+      a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/statistical_rethinking_ex " statistical_rethinking_ex  <br />
+      text Code examples and exercises in Elixir from the book Statistical Rethinking, 2nd Edition. <br />
+      text.italic Uses: Elixir, Nx
     / li
     /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/nano_gpt_ex" nano_gpt_ex <br />
     /   text Implementation of NanoGPT in Elixir. <br />
@@ -68,7 +68,7 @@ div
     li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/fake_slack" fake_slack <br />
       text TCP chat server with rooms and server commands. <br />
-      text.italic Uses: Elixir
+      text.italic Uses: Elixir, gen_tcp
     li
       a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/bank_crawl" bank_crawl <br />
       text CLI to crawl central bank press releases. <br />
