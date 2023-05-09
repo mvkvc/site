@@ -4,12 +4,12 @@ div
     li
       div
         text.font-semibold Toronto Metropolitan University <br />
-        text.italic September 2020 - Expected May 2023 <br />
+        text.italic September 2020 - Expected June 2023 <br />
         text Master of Science - Applied Mathematics
     li
       div
         text.font-semibold DockYard Academy <br />
-        text.italic February 2023 - Expected April 2023 <br />
+        text.italic February 2023 - Expected May 2023 <br />
         text Full Stack Development with Elixir
     li
       div

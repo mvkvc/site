@@ -50,6 +50,10 @@ div
       text Elixir library for interacting with a Kubo IPFS node.  <br />
       text.italic Uses: Elixir, HTTPoison, IPFS
     / li
+    /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/pinkie" pinkie <br />
+    /   text Self-hostable remote pinning service for IPFS.  <br />
+    /   text.italic Uses: Elixir, Phoenix, LiveView, TailwindCSS, IPFS
+    / li
     /   a.text-indigo-500.hover:text-indigo-800.hover:underline href="https://github.com/mvkvc/fin_view" fin_view <br />
     /   text Mortgage product query and comparison tool. <br />
     /   text.italic Uses: Elixir, Phoenix, LiveView, TailwindCSS
