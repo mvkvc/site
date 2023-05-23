@@ -33,6 +33,9 @@ defmodule Site.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:nimble_publisher, "~> 0.1.1"},
+      {:makeup_elixir, ">= 0.0.0"},
+      {:makeup_erlang, ">= 0.0.0"},
       {:tailwind, "~> 0.1.9", runtime: Mix.env() == :dev},
       {:phoenix, "~> 1.6.16"},
       {:phoenix_html, "~> 3.0"},
