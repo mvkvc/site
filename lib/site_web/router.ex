@@ -18,8 +18,12 @@ defmodule SiteWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/about", PageController, :about
+    get "/work", PageController, :work
+    get "/os", PageController, :os
     get "/blog", BlogController, :index
     get "/blog/:id", BlogController, :show
+    get "/*_missing", PageController, :missing
   end
 
   # Other scopes may use custom stacks.
