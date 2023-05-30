@@ -1,27 +1,9 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import Layout from '../layouts/Layout.astro';
 
 const pageTitle = "My Site";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style>
-			h1 {
-				color: purple;
-				font-size: 4rem;
-			}
-		</style>
-	</head>
-	<body>
-		<Navigation />
-        
-		<h1>{pageTitle}</h1>
-	</body>
-</html>
+<Layout title={pageTitle}>
+	<h1>{pageTitle}</h1>
+</Layout>

@@ -1,28 +1,16 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import Layout from '../layouts/Layout.astro';
 
 const pageTitle = "Blog";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Navigation />
-        
-		<h1>{pageTitle}</h1>
-        <p>My amazing thoughts</p>
+<Layout title={pageTitle}>
+	<h1>{pageTitle}</h1>
+	<p>My amazing thoughts</p>
 
-        <ul>
-            <li><a href="/posts/post_1/">Post 1</a></li>
-            <li><a href="/posts/post_2/">Post 2</a></li>
-            <li><a href="/posts/post_3/">Post 3</a></li>
-        </ul>
-	</body>
-</html>
+	<ul>
+		<li><a href="/posts/post_1/">Post 1</a></li>
+		<li><a href="/posts/post_2/">Post 2</a></li>
+		<li><a href="/posts/post_3/">Post 3</a></li>
+	</ul>
+</Layout>

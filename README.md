@@ -1,4 +1,4 @@
-# astro_blog_tutorial
+# site
 
 ```
 npm create astro@latest -- --template minimal
