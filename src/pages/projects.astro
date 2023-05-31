@@ -1,9 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectList from "../components/astro/ProjectList.astro";
 const pageTitle = "Projects";
 ---
 
 <BaseLayout title={pageTitle}>
-	<h1>{pageTitle}</h1>
+  <h1>{pageTitle}</h1>
+  <ProjectList />
 </BaseLayout>

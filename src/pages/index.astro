@@ -1,9 +1,14 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPostList from "../components/astro/BlogPostList.astro";
 
+const recentPosts = 3;
 const pageTitle = "My Site";
 ---
 
 <BaseLayout title={pageTitle}>
-	<h1>{pageTitle}</h1>
+  <h1>{pageTitle}</h1>
+  <p>Welcome to my site!</p>
+  <p>Here is a list of my most recent blog posts.</p>
+  <BlogPostList recent={recentPosts} />
 </BaseLayout>

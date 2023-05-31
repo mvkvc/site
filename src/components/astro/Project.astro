@@ -1,0 +1,11 @@
+---
+const { url, name, description, topics } = Astro.props;
+---
+
+<a href={url}>
+  <h3>{name}</h3>
+</a>
+<p>{description}</p>
+<div>
+  {topics.map((topic) => <p>{topic}</p>)}
+</div>
