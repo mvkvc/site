@@ -10,4 +10,9 @@ export default defineConfig({
     syntaxHighlight: 'prism',
   },
   integrations: [svelte(), tailwind(), mdx()]
+  // vite: {
+  //   define: {
+  //     'process.env.GH_TOKEN': process.env.GH_TOKEN
+  //   }
+  // }
 });
