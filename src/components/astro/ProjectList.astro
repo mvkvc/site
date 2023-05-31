@@ -4,12 +4,13 @@ import Project from "./Project.astro";
 const gh_user = "mvkvc";
 
 export async function getRepos(user) {
-  const token = import.meta.env.GH_TOKEN || "process.env.GH_TOKEN";
+  const cfToken = "process.env.GH_TOKEN";
+  const viteToken = import.meta.env.GH_TOKEN;
   const urlStars = `https://api.github.com/users/${user}/starred`;
   const result = await fetch(urlStars, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${viteToken || cfToken}`,
       "X-GitHub-Api-Version": "2022-11-28",
     },
   });
