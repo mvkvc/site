@@ -2,17 +2,21 @@
 import Project from "./Project.astro";
 
 const gh_user = "mvkvc";
-const token = import.meta.env.GH_TOKEN;
 
-const urlStars = `https://api.github.com/users/${gh_user}/starred`;
-const starredResponse = await fetch(urlStars, {
-  method: "GET",
-  headers: {
-    Authorization: `Bearer ${token}`,
-    "X-GitHub-Api-Version": "2022-11-28",
-  },
-});
-let starredRepos = await starredResponse.json();
+export async function getRepos(user) {
+  const token = import.meta.env.GH_TOKEN;
+  const urlStars = `https://api.github.com/users/${user}/starred`;
+  const result = await fetch(urlStars, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "X-GitHub-Api-Version": "2022-11-28",
+    },
+  });
+  return await result.json()
+}
+
+let starredRepos = await getRepos(gh_user);
 starredRepos = starredRepos.filter((repo) => repo.html_url.includes(gh_user));
 starredRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
 starredRepos = starredRepos.map((repo) => ({
