@@ -6,11 +6,12 @@ const gh_user = "mvkvc";
 export async function getRepos(user) {
   const cfToken = "process.env.GH_TOKEN";
   const viteToken = import.meta.env.GH_TOKEN;
+  const token = !cfToken.includes("GH_TOKEN") ? cfToken : viteToken;
   const urlStars = `https://api.github.com/users/${user}/starred`;
   const result = await fetch(urlStars, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${viteToken || cfToken}`,
+      Authorization: `Bearer ${token}`,
       "X-GitHub-Api-Version": "2022-11-28",
     },
   });
