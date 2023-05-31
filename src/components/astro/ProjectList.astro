@@ -4,9 +4,9 @@ import Project from "./Project.astro";
 const gh_user = "mvkvc";
 
 export async function getRepos(user) {
-  // const cfToken = "process.env.GH_TOKEN";
-  const token = import.meta.env.GH_TOKEN;
-  // const token = viteToken || cfToken;
+  const cfToken = process.env.GH_TOKEN;
+  const viteToken = import.meta.env.GH_TOKEN;
+  const token = viteToken || cfToken;
   const urlStars = `https://api.github.com/users/${user}/starred`;
   const result = await fetch(urlStars, {
     method: "GET",
