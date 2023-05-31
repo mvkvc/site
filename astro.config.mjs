@@ -9,5 +9,10 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: 'prism',
   },
-  integrations: [svelte(), tailwind(), mdx()]
+  integrations: [svelte(), tailwind(), mdx()],
+  vite: {
+    define: {
+      'process.env.GH_TOKEN': process.env.GH_TOKEN
+    }
+  }
 });
