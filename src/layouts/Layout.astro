@@ -1,6 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/astro/Header.astro';
+import Footer from '../components/astro/Footer.astro';
 
 export interface Props {
 	title: string;
@@ -16,9 +16,9 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<!-- Download themes from https://github.com/PrismJS/prism-themes -->
-		<!-- <link href="/prism-dracula.css" rel="stylesheet" /> -->
-		<!-- <link href="/prism-material-oceanic.css" rel="stylesheet" /> -->
-		<link href="/prism-one-dark.css" rel="stylesheet" />
+		<!-- <link href="/css/prism-dracula.css" rel="stylesheet" /> -->
+		<!-- <link href="/css/prism-material-oceanic.css" rel="stylesheet" /> -->
+		<link href="/css/prism-one-dark.css" rel="stylesheet" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
