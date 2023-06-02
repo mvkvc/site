@@ -4,9 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
-    paths:
-      - "priv/site/**"
+      - still
 
 env:
   ELIXIR_VERSION: 1.14
