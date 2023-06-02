@@ -1,31 +1,27 @@
-.elixir_ls
 .history
 .vscode
-*.code-workspace
-*.sublime-*
 
-# The directory Mix will write compiled artifacts to.
-/_build/
+# build output
+dist/
+.output/
 
-# If you run "mix test --cover", coverage assets end up here.
-/cover/
+# dependencies
+node_modules/
 
-# The directory Mix downloads your dependencies sources to.
-/deps/
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Where third-party dependencies like ExDoc output generated docs.
-/doc/
+# environment variables
+.env
+.env.production
 
-# Ignore .fetch files in case you like to edit your project deps locally.
-/.fetch
+# macOS-specific files
+.DS_Store
 
-# If the VM crashes, it generates a dump, let's ignore it too.
-erl_crash.dump
-
-# Also ignore archive artifacts (built via "mix archive.build").
-*.ez
-
-# Ignore package tarball (built via "mix hex.build").
-demo-*.tar
-
-_site/
+# misc
+*.pem
+.cache
+.astro

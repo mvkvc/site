@@ -1,2 +1,0 @@
-defmodule Site do
-end
