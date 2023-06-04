@@ -1,0 +1,17 @@
+---
+import PageLayout from "@/layouts/Base";
+import ProjectList from "@/components/ProjectList";
+
+const meta = {
+	title: "Projects",
+	description: "I'm a starter theme for Astro.build",
+};
+---
+
+<PageLayout meta={meta}>
+    <div class="space-y-6">
+        <h1 class="title">Projects</h1>
+        <p>Here are some of my open source projects:</p>
+        <ProjectList />
+    </div>
+</PageLayout>
