@@ -3,7 +3,8 @@ import ProjectItem from "./ProjectItem.astro";
 
 const gh_user = "mvkvc";
 let token = import.meta.env.GH_TOKEN;
-token = import.meta.env.PROD ? token.split("=")[1] : token;
+// Cloudflare specific
+// token = import.meta.env.PROD ? token.split("=")[1] : token;
 
 const urlStars = `https://api.github.com/users/${gh_user}/starred`;
 const result = await fetch(urlStars, {
