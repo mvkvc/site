@@ -11,7 +11,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 	const allPosts = await getCollection("post");
 	const allPublishedPosts = filterDrafts(allPosts);
 	const allPostsByDate = sortMDByDate(allPublishedPosts);
-	const uniqueTags = getUniqueTags(allPosts);
+	const uniqueTags = getUniqueTags(allPublishedPosts);
 	return paginate(allPostsByDate, { props: { uniqueTags }, pageSize: 10 });
 }
 

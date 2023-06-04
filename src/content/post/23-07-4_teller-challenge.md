@@ -8,4 +8,4 @@ draft: true
 
 ## Teller Bank Challenge Writeup
 
-CONTENT
+Writeup
