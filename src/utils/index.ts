@@ -1,3 +1,9 @@
 export { getFormattedDate } from "./date";
 export { elementHasClass, toggleClass } from "./domElement";
-export { sortMDByDate, getUniqueTags, getUniqueTagsWithCount, strToDate } from "./post";
+export {
+	sortMDByDate,
+	filterDrafts,
+	getUniqueTags,
+	getUniqueTagsWithCount,
+	strToDate,
+} from "./post";

@@ -3,11 +3,12 @@ import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
-import { sortMDByDate } from "@/utils";
+import { sortMDByDate, filterDrafts } from "@/utils";
 
 const MAX_POSTS = 3;
 const allPosts = await getCollection("post");
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+const allPublishedPosts = filterDrafts(allPosts);
+const allPostsByDate = sortMDByDate(allPublishedPosts).slice(0, MAX_POSTS);
 ---
 
 <PageLayout meta={{ title: "Home" }}>

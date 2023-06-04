@@ -16,6 +16,7 @@ const post = defineCollection({
 		publishDate: z.string().transform((str) => strToDate(str)),
 		tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
 		ogImage: z.string().optional(),
+		draft: z.boolean().optional(),
 	}),
 });
 
