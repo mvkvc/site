@@ -2,18 +2,79 @@
 import PageLayout from "@/layouts/Base";
 // import { Image } from "@astrojs/image/components";
 // import aboutImg from "../assets/about-astro.png";
+import ExperienceList from "@/components/ExperienceList";
+
+const experience = [
+	{
+		title: "Teaching Assistant",
+		institution: "Toronto Metropolitan University",
+		group: "Department of Mathematics",
+		location: "Toronto, Canada",
+		startDate: "Sept 2021",
+		endDate: "May 2022",
+	},
+	{
+		title: "Data Scientist",
+		institution: "Royal Bank of Canada",
+		group: "Global Technology Risk",
+		location: "Toronto, Canada",
+		startDate: "Sept 2021",
+		endDate: "July 2019",
+	},
+	// {
+	// 	title: "Data Scientist Summer Student",
+	// 	institution: "Royal Bank of Canada",
+	// 	group: "Global Technology Risk",
+	// 	location: "Toronto, Canada",
+	// 	startDate: "May 2018",
+	// 	endDate: "Aug 2018",
+	// },
+	// {
+	// 	title: "Data Analyst Summer Student",
+	// 	institution: "Ontario Ministry of Energy",
+	// 	group: "Economics and Systems Planning Group",
+	// 	location: "Toronto, Canada",
+	// 	startDate: "May 2017",
+	// 	endDate: "Aug 2017",
+	// },
+];
+
+const education = [
+	{
+		title: "Full-Stack Development with Elixir",
+		institution: "DockYard Academy",
+		location: "Remote",
+		startDate: "Feb 2023",
+		endDate: "May 2023",
+	},
+	{
+		title: "Bachelor of Science - Financial Mathematics, Economics Minor",
+		institution: "Toronto Metropolitan University ",
+		location: "Toronto, Canada",
+		startDate: "Sep 2014",
+		endDate: "May 2019",
+	},
+];
 
 const meta = {
 	title: "About",
-	description: "I'm a starter theme for Astro.build",
+	description: "About me.",
 };
 ---
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
 		<h1 class="title">About</h1>
-		<p>Talk about me and my experience here.</p>
-		
+		<p>
+			I enjoy using Python, Elixir, and JavaScript to explore my interests including machine
+			learning and full-stack web development.
+		</p>
+
+		<h2 class="title mb-4 text-xl">Experience</h2>
+		<ExperienceList experienceList={experience} />
+		<h2 class="title mb-4 text-xl">Education</h2>
+		<ExperienceList experienceList={education} />
+
 		<!-- <p>
 			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
 			website.

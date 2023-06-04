@@ -1,0 +1,22 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const { experienceList } = Astro.props;
+---
+
+<ul>
+	{
+		experienceList.map((exp) => (
+			<li>
+				<ExperienceItem
+					title={exp.title}
+					institution={exp.institution}
+					group={exp.group}
+					location={exp.location}
+					startDate={exp.startDate}
+					endDate={exp.endDate}
+				/>
+			</li>
+		))
+	}
+</ul>

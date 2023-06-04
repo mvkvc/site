@@ -1,0 +1,28 @@
+---
+const { title, institution, group, location, startDate, endDate } = Astro.props;
+---
+
+<div class="mb-4 space-y-1">
+	<h2 class="">{title}</h2>
+	<div class="flex items-center justify-between italic">
+		{
+			group ? (
+				<h3>
+					{institution}, {group}
+				</h3>
+			) : (
+				<h3>{institution}</h3>
+			)
+		}
+		{location ? <p>{location}</p> : null}
+	</div>
+	{
+		startDate || endDate ? (
+			<p class="font-style: italic text-gray-500">
+				{startDate ? `${startDate}` : ""}
+				{startDate && endDate ? " - " : ""}
+				{endDate ? `${endDate}` : ""}
+			</p>
+		) : null
+	}
+</div>

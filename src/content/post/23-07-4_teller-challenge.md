@@ -6,6 +6,4 @@ tags: ["elixir", "security", "livebook"]
 draft: true
 ---
 
-## Teller Bank Challenge Writeup
-
 Writeup

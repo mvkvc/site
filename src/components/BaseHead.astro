@@ -14,28 +14,27 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <script>
-	const isDarkModeEnabled = () => document.documentElement.classList.contains('dark');
+	const isDarkModeEnabled = () => document.documentElement.classList.contains("dark");
 
 	const updatePublic = () => {
 		const darkModeEnabled = isDarkModeEnabled();
 		var iconLinks = document.querySelectorAll('link[rel="icon"]');
 
-		iconLinks.forEach(icon => {
-			if (icon.href.startsWith(window.location.origin + '/')) {
-				let pathParts = icon.href.split('/');
+		iconLinks.forEach((icon) => {
+			if (icon.href.startsWith(window.location.origin + "/")) {
+				let pathParts = icon.href.split("/");
 				let basePathIndex = pathParts.indexOf(window.location.host) + 1;
-				pathParts[basePathIndex] = darkModeEnabled ? 'dark' : 'light';
-				icon.href = pathParts.join('/');
+				pathParts[basePathIndex] = darkModeEnabled ? "dark" : "light";
+				icon.href = pathParts.join("/");
 			}
 		});
 	};
-	
 
 	document.addEventListener("DOMContentLoaded", () => {
 		updatePublic();
 
 		const observer = new MutationObserver(() => {
-				updatePublic();
+			updatePublic();
 		});
 
 		observer.observe(document.documentElement, { attributes: true });
@@ -47,10 +46,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <!-- Icons / Favicon -->
-<link rel="icon" href="/dark/favicon.ico" sizes="any" />
-<!-- <link rel="icon" href="/dark/icon.svg" type="image/svg+xml" /> -->
+<link rel="icon" type="image/x-icon" href="/dark/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="/dark/apple-touch-icon.png" />
-<link rel="manifest" href="/manifest.webmanifest" />
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->

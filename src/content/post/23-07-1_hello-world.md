@@ -6,6 +6,4 @@ tags: ["meta"]
 draft: false
 ---
 
-## Hello World
-
-Content
+Hello! This is the first post on my blog. I plan to share my experience and what I have learned from my technical projects here. My hope is that is is useful for others in the future.
