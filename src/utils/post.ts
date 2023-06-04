@@ -25,3 +25,18 @@ export function getUniqueTagsWithCount(posts: CollectionEntry<"post">[] = []): {
 		return runningTags;
 	}, {});
 }
+
+export function strToDate(dateStr: string, prefix = "20") {
+	let date = new Date(dateStr);
+
+	if (isNaN(date.getTime())) {
+		const dateArr = dateStr.split("/");
+		if (dateArr[0].length === 2) {
+			dateArr[0] = prefix + dateArr[0];
+		}
+		const newStrDate = dateArr.join("/");
+		date = new Date(newStrDate);
+	}
+
+	return date;
+}
