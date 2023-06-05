@@ -44,3 +44,7 @@ export function strToDate(dateStr: string, prefix = "20") {
 
 	return date;
 }
+
+export function editSlug(slug: string) {
+	return slug.split("_")[1];
+}

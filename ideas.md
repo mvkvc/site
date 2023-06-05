@@ -11,3 +11,4 @@ Future blog post titles in order of likelihood of writing.
 - Elixir's Most Essential Functions
 - NanoGPT in Elixir
 - Reinforcement Learning Gym in Elixir
+- Creating a Git-based CMS with Phoenix

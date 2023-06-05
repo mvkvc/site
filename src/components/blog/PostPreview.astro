@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { IElement } from "@/data/shared";
-import { getFormattedDate } from "@/utils";
+import { getFormattedDate, editSlug } from "@/utils";
 
 interface Props extends IElement {
 	post: CollectionEntry<"post">;
@@ -16,7 +16,7 @@ const postDate = getFormattedDate(date);
 
 <time datetime={datetime} class="min-w-[120px] text-gray-500">{postDate}</time>
 <Element>
-	<a href={`/posts/${post.slug.split("_")[1]}/`} class="cactus-link" rel="prefetch">
+	<a href={`/posts/${editSlug(post.slug)}/`} class="cactus-link" rel="prefetch">
 		{post.data.title}
 	</a>
 </Element>

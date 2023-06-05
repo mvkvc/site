@@ -1,9 +1,13 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { siteConfig } from "@/site-config";
+import { editSlug } from "@/utils";
 
 export const get = async () => {
-	const posts = await getCollection("post");
+	let posts = await getCollection("post");
+	// Log all posts
+	console.log(posts);
+	posts = posts.filter((post) => typeof post.data.draft !== "boolean" || !post.data.draft);
 
 	return rss({
 		title: siteConfig.title,
@@ -13,7 +17,7 @@ export const get = async () => {
 			title: post.data.title,
 			description: post.data.description,
 			pubDate: post.data.publishDate,
-			link: `posts/${post.slug}`,
+			link: `posts/${editSlug(post.slug)}`,
 		})),
 	});
 };

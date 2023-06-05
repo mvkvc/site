@@ -6,4 +6,5 @@ export {
 	getUniqueTags,
 	getUniqueTagsWithCount,
 	strToDate,
+	editSlug,
 } from "./post";
