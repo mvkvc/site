@@ -3,7 +3,7 @@
 	"version": "2.2.3",
 	"private": false,
 	"scripts": {
-		"dev": "astro dev",
+		"dev": "astro dev --drafts",
 		"start": "astro dev",
 		"sync": "astro sync",
 		"check": "astro check",
