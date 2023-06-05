@@ -52,5 +52,12 @@
 	},
 	"resolutions": {
 		"rollup": "3.21.8"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": [
+				"rollup"
+			]
+		}
 	}
 }
