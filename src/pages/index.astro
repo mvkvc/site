@@ -5,7 +5,7 @@ import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
 import { sortMDByDate, filterDrafts } from "@/utils";
 
-const MAX_POSTS = 3;
+const MAX_POSTS = 5;
 const allPosts = await getCollection("post");
 const allPublishedPosts = filterDrafts(allPosts);
 const allPostsByDate = sortMDByDate(allPublishedPosts).slice(0, MAX_POSTS);
@@ -15,9 +15,9 @@ const allPostsByDate = sortMDByDate(allPublishedPosts).slice(0, MAX_POSTS);
 	<section>
 		<h1 class="title mb-6">Home</h1>
 		<p class="mb-4">
-			Hello! My name is Marko Vukovic and I am a software developer from Toronto, Canada. If you've
-			got a project that seems like a good match for collaboration or simply wish to connect, please
-			feel free to reach out.
+			Hello! My name is Marko Vukovic and I am a software developer from Toronto, Canada. If
+			you've got a project that seems like a good match for collaboration or simply wish to
+			connect, please feel free to reach out.
 		</p>
 		<SocialList />
 	</section>
