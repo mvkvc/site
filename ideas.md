@@ -12,3 +12,6 @@ Future blog post titles in order of likelihood of writing.
 - NanoGPT in Elixir
 - Reinforcement Learning Gym in Elixir
 - Creating a Git-based CMS with Phoenix
+- Train an Axon Model with SkyPilot
+- Branching in Livebook with Examples
+- Lambda Stack and Elixir
