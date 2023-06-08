@@ -15,3 +15,7 @@ Future blog post titles in order of likelihood of writing.
 - Train an Axon Model with SkyPilot
 - Branching in Livebook with Examples
 - Lambda Stack and Elixir
+- Creating Smart Cells in Livebook
+- Deploying a Phoenix app with MRSK
+- Clustered Nx Serving with MRSK and Tailscale
+- Implementing Langchain in Elixir
