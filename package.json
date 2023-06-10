@@ -3,12 +3,12 @@
 	"version": "2.2.3",
 	"private": false,
 	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
+		"dev": "astro dev --open",
+		"start": "astro dev --open",
 		"sync": "astro sync",
 		"check": "astro check",
 		"build": "astro build",
-		"preview": "astro build && astro preview",
+		"preview": "astro build && astro preview --open",
 		"format": "prettier -w --plugin-search-dir=. --cache ."
 	},
 	"devDependencies": {

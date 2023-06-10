@@ -5,8 +5,9 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: "0 0 * * *"
+  # If using CMS, uncomment the line below
+  # schedule:
+  #   - cron: "0 0 * * *"
 
 # Allow this job to clone the repo and create a page deployment
 permissions:

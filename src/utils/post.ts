@@ -7,7 +7,11 @@ export function sortMDByDate(posts: CollectionEntry<"post">[] = []) {
 }
 
 export function filterDrafts(posts: CollectionEntry<"post">[] = []) {
-	return posts.filter((post) => !post.data.draft);
+	if (import.meta.env.DEV) {
+		return posts;
+	} else {
+		return posts.filter((post) => !post.data.draft);
+	}
 }
 
 export function getUniqueTags(posts: CollectionEntry<"post">[] = []) {
