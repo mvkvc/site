@@ -10,7 +10,9 @@ const url = new URL(Astro.request.url);
 
 	document.addEventListener("DOMContentLoaded", () => {
 		const header = document.getElementById("main-header") as HTMLElement;
-		const toggleMenuButton = document.getElementById("toggle-navigation-menu") as HTMLButtonElement;
+		const toggleMenuButton = document.getElementById(
+			"toggle-navigation-menu"
+		) as HTMLButtonElement;
 		let menuOpen = false;
 
 		toggleMenuButton.addEventListener("click", () => {
@@ -49,7 +51,7 @@ const url = new URL(Astro.request.url);
 			}
 		</nav>
 	</div>
-	<ThemeToggle />
+	<!-- <ThemeToggle /> -->
 	<button
 		id="toggle-navigation-menu"
 		class="group relative ms-8 h-7 w-7 sm:invisible sm:hidden"
@@ -69,7 +71,8 @@ const url = new URL(Astro.request.url);
 			stroke-width="1.5"
 			stroke="currentColor"
 		>
-			<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+			<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"
+			></path>
 		</svg>
 		<svg
 			id="cross-svg"

@@ -34,3 +34,14 @@
 
 @tailwind components;
 @tailwind utilities;
+
+@media (prefers-color-scheme: dark) {
+	.shiki.solarized-dark {
+	  display: none;
+	}
+  }
+  @media (prefers-color-scheme: light) {
+	.shiki.solarized-light {
+	  display: none;
+	}
+  }
