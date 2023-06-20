@@ -20,3 +20,4 @@ Future blog post titles in order of likelihood of writing.
 - Clustered Nx Serving with MRSK and Tailscale
 - Implementing Langchain in Elixir
 - Draft posts with Astro
+- Compare tools for creating presentations from code

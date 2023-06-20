@@ -3,19 +3,33 @@ import ProjectItem from "./ProjectItem.astro";
 
 const gh_user = "mvkvc";
 let token = import.meta.env.GH_TOKEN;
+
 // Cloudflare specific
 // token = import.meta.env.PROD ? token.split("=")[1] : token;
 
-const urlStars = `https://api.github.com/users/${gh_user}/starred`;
-const result = await fetch(urlStars, {
-	method: "GET",
-	headers: {
-		Authorization: `Bearer ${token}`,
-		"X-GitHub-Api-Version": "2022-11-28",
-	},
-});
+const urlStars = `https://api.github.com/users/${gh_user}/starred?per_page=100`; // set max per_page to 100
 
-let starredRepos = await result.json();
+let starredRepos = [];
+let fetchURL = urlStars;
+
+do {
+	const result = await fetch(fetchURL, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${token}`,
+			"X-GitHub-Api-Version": "2022-11-28",
+		},
+	});
+
+	let data = await result.json();
+	starredRepos = [...starredRepos, ...data];
+
+	// Parsing link header to find the next URL
+	const linkHeader = result.headers.get("Link") || "";
+	const nextLink = linkHeader.split(", ").find((link) => link.endsWith('rel="next"'));
+	fetchURL = nextLink && nextLink.slice(nextLink.indexOf("<") + 1, nextLink.indexOf(">"));
+} while (fetchURL);
+
 starredRepos = starredRepos.filter((repo) => repo.html_url.includes(gh_user));
 starredRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
 starredRepos = starredRepos.map((repo) => ({
@@ -24,6 +38,8 @@ starredRepos = starredRepos.map((repo) => ({
 	description: repo.description,
 	topics: repo.topics,
 }));
+// console.log(starredRepos);
+console.log("starredRepos", starredRepos);
 ---
 
 <ul class="space-y-4 sm:space-y-2">
