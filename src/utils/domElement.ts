@@ -1,5 +1,5 @@
 export function toggleClass(element: HTMLElement, className: string) {
-	element.classList.toggle(className);
+	return element.classList.toggle(className);
 }
 
 export function elementHasClass(element: HTMLElement, className: string) {

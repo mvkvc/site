@@ -35,11 +35,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		// TODO: fix
 		const body = document.body;
 		const image = darkModeEnabled ? "/dark/collatz.png" : "/light/collatz.png";
-		body.style.backgroundImage = `url(${image})`;
-		body.style.backgroundPosition = "top left";
-		body.style.backgroundRepeat = "no-repeat";
-		body.style.backgroundSize = "22%";
+
+		const scaleFactor = 22 / 1128;
+		// Checking window width
+		if (window.innerWidth > 800) {
+			body.style.backgroundImage = `url(${image})`;
+			body.style.backgroundPosition = "top left";
+			body.style.backgroundRepeat = "no-repeat";
+			body.style.backgroundSize = `${window.innerWidth * scaleFactor}%`; // Scale the image size based on viewport width.
+		} else {
+			// Remove the background image when window width is 600px or less
+			body.style.backgroundImage = "none";
+		}
 	};
+
+	window.addEventListener("resize", updatePublic);
 
 	document.addEventListener("DOMContentLoaded", () => {
 		updatePublic();
