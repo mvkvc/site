@@ -35,7 +35,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	.shiki.solarized-dark {
 		display: none;
 	}
@@ -44,7 +44,7 @@
 	.shiki.solarized-light {
 		display: none;
 	}
-}
+} */
 
 /* @media (max-width: 600px) {
 	body {

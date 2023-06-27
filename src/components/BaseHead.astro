@@ -1,6 +1,7 @@
 ---
 import type { SiteMeta } from "@/data/siteMeta";
 import { siteConfig } from "@/site-config";
+// Loading after script to stop flashing of dark mode
 import "../styles/global.css";
 
 type Props = SiteMeta;
@@ -16,9 +17,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <script>
 	const storedPreference = sessionStorage.getItem("darkMode");
-	const darkModeEnabled = storedPreference === "true";
-	document.documentElement.classList.toggle("dark", darkModeEnabled);
+	let darkModeEnabled;
+
+	// if there's no stored preference or it is "true", default to dark mode
+	if (storedPreference === null || storedPreference === "true") {
+		darkModeEnabled = true;
+	} else {
+		darkModeEnabled = false;
+	}
+
+	// if the current page is not in the desired mode, switch it
+	const currentMode = document.documentElement.classList.contains("dark");
+	if (currentMode !== darkModeEnabled) {
+		document.documentElement.classList.toggle("dark");
+		sessionStorage.setItem("darkMode", darkModeEnabled ? "true" : "false");
+	}
 </script>
+<!-- <link rel="stylesheet" href="/src/styles/global.css" /> -->
+<script defer data-domain="mvk.vc" src="https://plausible.io/js/script.js"></script>
+
 <!-- https://editor.p5js.org/mvkvc/sketches/Bwe2RORwm COLLATZ IMAGE HERE -->
 <script async>
 const isDarkModeEnabled = () => document.documentElement.classList.contains("dark");
@@ -93,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 });
 </script>
-<script async data-domain="mvk.vc" src="https://plausible.io/js/script.js"></script>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />

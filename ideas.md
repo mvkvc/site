@@ -21,3 +21,7 @@ Future blog post titles in order of likelihood of writing.
 - Implementing Langchain in Elixir
 - Draft posts with Astro
 - Compare tools for creating presentations from code
+- Create a performant RL env with Jax
+- Ideas for starting a business
+- Nx serving in your Phoenix app
+- Tips for giving your first talk

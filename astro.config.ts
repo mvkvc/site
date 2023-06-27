@@ -11,7 +11,7 @@ export default defineConfig({
 	site: "https://mvk.vc/",
 	markdown: {
 		shikiConfig: {
-			theme: "dracula",
+			theme: "github-dark",
 			wrap: true,
 		},
 	},

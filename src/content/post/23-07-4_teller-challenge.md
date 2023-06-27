@@ -1,6 +1,6 @@
 ---
 title: "Teller Bank Challenge"
-description: "Writeup of my solution to the Teller Bank Challenge."
+description: "Writeup of my solution to the Teller Bank Challenge held during ElixirConf EU 2023."
 publishDate: "23/07/04"
 tags: ["elixir", "reverse engineering", "livebook"]
 draft: true
