@@ -4,6 +4,17 @@ import PageLayout from "@/layouts/Base";
 // import aboutImg from "../assets/about-astro.png";
 import ExperienceList from "@/components/ExperienceList";
 
+const talks = [
+	{
+		title: "Cell Driven Development",
+		link: "https://github.com/einariii/cell_driven_development",
+		institution: "Toronto Elixir Meetup @ theScore",
+		location: "Toronto, Canada",
+		startDate: "June 2023",
+		description: "Guide to creating your own custom Livebook smart cells with real examples.",
+	},
+];
+
 const experience = [
 	{
 		title: "Teaching Assistant",
@@ -67,13 +78,15 @@ const meta = {
 		<h1 class="title">About</h1>
 		<p>
 			I enjoy using Python, Elixir, and JavaScript to explore my interests including machine
-			learning and full-stack web development. A full version of my CV can be downloaded <a
+			learning and full-stack web development. The full version of my resume can be found <a
 				class="cactus-link"
 				href="
 				/marko_vukovic_resume.pdf">here</a
 			>.
 		</p>
 
+		<h2 class="title mb-4 text-xl">Talks</h2>
+		<ExperienceList experienceList={talks} />
 		<h2 class="title mb-4 text-xl">Experience</h2>
 		<ExperienceList experienceList={experience} />
 		<h2 class="title mb-4 text-xl">Education</h2>

@@ -1,9 +1,21 @@
 ---
-const { title, institution, group, location, startDate, endDate } = Astro.props;
+const { title, link, institution, group, location, startDate, endDate, description } = Astro.props;
 ---
 
 <div class="mb-4 space-y-1">
-	<h2 class="">{title}</h2>
+	<div class="flex items-center justify-between">
+		{
+			link ? (
+				<h2>
+					<a class="cactus-link" href={link}>
+						{title}
+					</a>
+				</h2>
+			) : (
+				<h2>{title}</h2>
+			)
+		}
+	</div>
 	<div class="flex items-center justify-between italic">
 		{
 			group ? (
@@ -25,4 +37,6 @@ const { title, institution, group, location, startDate, endDate } = Astro.props;
 			</p>
 		) : null
 	}
+
+	{description ? <p class="">{description}</p> : null}
 </div>

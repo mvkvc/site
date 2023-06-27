@@ -10,11 +10,13 @@ const { experienceList } = Astro.props;
 			<li>
 				<ExperienceItem
 					title={exp.title}
+					link={exp.link}
 					institution={exp.institution}
 					group={exp.group}
 					location={exp.location}
 					startDate={exp.startDate}
 					endDate={exp.endDate}
+					description={exp.description}
 				/>
 			</li>
 		))

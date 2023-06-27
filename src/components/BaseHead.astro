@@ -30,6 +30,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 				icon.href = pathParts.join("/");
 			}
 		});
+
+		// Rewrite link to background image url based on dark or light mode its collatz.png in either /dark or /light
+		// TODO: fix
+		const body = document.body;
+		const image = darkModeEnabled ? "/dark/collatz.png" : "/light/collatz.png";
+		body.style.backgroundImage = `url(${image})`;
+		body.style.backgroundPosition = "top left";
+		body.style.backgroundRepeat = "no-repeat";
+		body.style.backgroundSize = "22%";
 	};
 
 	document.addEventListener("DOMContentLoaded", () => {

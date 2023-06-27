@@ -7,7 +7,8 @@ let token = import.meta.env.GH_TOKEN;
 // Cloudflare specific
 // token = import.meta.env.PROD ? token.split("=")[1] : token;
 
-const urlStars = `https://api.github.com/users/${gh_user}/starred?per_page=100`; // set max per_page to 100
+const maxPerPage = 100;
+const urlStars = `https://api.github.com/users/${gh_user}/starred?per_page=${maxPerPage}`;
 
 let starredRepos = [];
 let fetchURL = urlStars;
@@ -38,8 +39,6 @@ starredRepos = starredRepos.map((repo) => ({
 	description: repo.description,
 	topics: repo.topics,
 }));
-// console.log(starredRepos);
-console.log("starredRepos", starredRepos);
 ---
 
 <ul class="space-y-4 sm:space-y-2">

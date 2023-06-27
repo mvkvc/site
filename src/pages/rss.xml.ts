@@ -5,8 +5,6 @@ import { editSlug } from "@/utils";
 
 export const get = async () => {
 	let posts = await getCollection("post");
-	// Log all posts
-	console.log(posts);
 	posts = posts.filter((post) => typeof post.data.draft !== "boolean" || !post.data.draft);
 
 	return rss({
