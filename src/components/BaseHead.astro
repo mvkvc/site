@@ -14,55 +14,86 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url).href;
 ---
 
-<!-- https://editor.p5js.org/mvkvc/sketches/Bwe2RORwm COLLATZ IMAGE HERE -->
-<script defer data-domain="mvk.vc" src="https://plausible.io/js/script.js"></script>
 <script>
-	const isDarkModeEnabled = () => document.documentElement.classList.contains("dark");
-
-	const updatePublic = () => {
-		const darkModeEnabled = isDarkModeEnabled();
-
-		var iconLinks = document.querySelectorAll('link[rel="icon"]');
-
-		iconLinks.forEach((icon) => {
-			if (icon.href.startsWith(window.location.origin + "/")) {
-				let pathParts = icon.href.split("/");
-				let basePathIndex = pathParts.indexOf(window.location.host) + 1;
-				pathParts[basePathIndex] = darkModeEnabled ? "dark" : "light";
-				icon.href = pathParts.join("/");
-			}
-		});
-
-		// Rewrite link to background image url based on dark or light mode its collatz.png in either /dark or /light
-		// TODO: fix
-		const body = document.body;
-		const image = darkModeEnabled ? "/dark/collatz.png" : "/light/collatz.png";
-
-		// const scaleFactor = 22 / 1128;
-		const scaleFactor = 22 / 1200;
-		// Checking window width
-		if (window.innerWidth > 900) {
-			body.style.backgroundImage = `url(${image})`;
-			body.style.backgroundPosition = "top left";
-			body.style.backgroundRepeat = "no-repeat";
-			body.style.backgroundSize = `${Math.min(window.innerWidth * scaleFactor, 100)}%`;
-		} else {
-			body.style.backgroundImage = "none";
-		}
-	};
-
-	window.addEventListener("resize", updatePublic);
-
-	document.addEventListener("DOMContentLoaded", () => {
-		updatePublic();
-
-		const observer = new MutationObserver(() => {
-			updatePublic();
-		});
-
-		observer.observe(document.documentElement, { attributes: true });
-	});
+	const storedPreference = sessionStorage.getItem("darkMode");
+	const darkModeEnabled = storedPreference === "true";
+	document.documentElement.classList.toggle("dark", darkModeEnabled);
 </script>
+<!-- https://editor.p5js.org/mvkvc/sketches/Bwe2RORwm COLLATZ IMAGE HERE -->
+<script async>
+const isDarkModeEnabled = () => document.documentElement.classList.contains("dark");
+
+const saveThemePreference = (isEnabled) => {
+	sessionStorage.setItem("darkMode", isEnabled ? "true" : "false");
+};
+
+const loadThemePreference = () => {
+	const storedPreference = sessionStorage.getItem("darkMode");
+	if (storedPreference !== null) {
+		return storedPreference === "true";
+	} else {
+		// Default value if there is no stored preference
+		return false;
+	}
+};
+
+const updatePublic = () => {
+	const darkModeEnabled = isDarkModeEnabled();
+	saveThemePreference(darkModeEnabled);
+
+	var iconLinks = document.querySelectorAll('link[rel="icon"]');
+
+	iconLinks.forEach((icon) => {
+		if (icon.href.startsWith(window.location.origin + "/")) {
+			let pathParts = icon.href.split("/");
+			let basePathIndex = pathParts.indexOf(window.location.host) + 1;
+			pathParts[basePathIndex] = darkModeEnabled ? "dark" : "light";
+			icon.href = pathParts.join("/");
+		}
+	});
+
+	// Rewrite link to background image url based on dark or light mode its collatz.png in either /dark or /light
+	// TODO: fix
+	const body = document.body;
+	const image = darkModeEnabled ? "/dark/collatz.png" : "/light/collatz.png";
+
+	// const scaleFactor = 22 / 1128;
+	const scaleFactor = 22 / 1200;
+	// Checking window width
+	if (window.innerWidth > 900) {
+		body.style.backgroundImage = `url(${image})`;
+		body.style.backgroundPosition = "top left";
+		body.style.backgroundRepeat = "no-repeat";
+		body.style.backgroundSize = `${Math.min(window.innerWidth * scaleFactor, 100)}%`;
+	} else {
+		body.style.backgroundImage = "none";
+	}
+};
+
+window.addEventListener("resize", updatePublic);
+
+document.addEventListener("DOMContentLoaded", () => {
+	// const darkModeEnabled = loadThemePreference();
+	// document.documentElement.classList.toggle("dark", darkModeEnabled);
+
+	updatePublic();
+
+	const observer = new MutationObserver(() => {
+		updatePublic();
+	});
+
+	observer.observe(document.documentElement, { attributes: true });
+
+	const themeToggleButton = document.querySelector("toggle-theme");
+	if (themeToggleButton) {
+		themeToggleButton.addEventListener("click", () => {
+			// Toggle theme
+			isDarkModeEnabled() ? saveThemePreference(true) : saveThemePreference(false);
+		});
+	}
+});
+</script>
+<script async data-domain="mvk.vc" src="https://plausible.io/js/script.js"></script>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
