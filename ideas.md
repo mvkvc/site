@@ -25,3 +25,4 @@ Future blog post titles in order of likelihood of writing.
 - Ideas for starting a business
 - Nx serving in your Phoenix app
 - Tips for giving your first talk
+- Neon DB in Elixir and Fly
