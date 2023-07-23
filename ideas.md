@@ -19,6 +19,7 @@ Future blog post titles in order of likelihood of writing.
 - Deploying a Phoenix app with MRSK
 - Clustered Nx Serving with MRSK and Tailscale
 - Implementing Langchain in Elixir
+- Setting up litestream with Phoenix and Elixir
 - Draft posts with Astro
 - Compare tools for creating presentations from code
 - Create a performant RL env with Jax
