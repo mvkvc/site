@@ -1,17 +1,40 @@
 ---
 import PageLayout from "@/layouts/Base";
 import ProjectList from "@/components/ProjectList";
+// import ProjectItem from "@/components/ProjectList";
+// import ProductItem from "@/components/ProjectItem";
 
 const meta = {
 	title: "Projects",
 	description: "My projects.",
 };
+
+// const products = [
+// 	{
+// 		"name": "SvelteKit TailwindCSS",
+// 		"description": "A SvelteKit template with TailwindCSS.",
+// 		"url": "",
+// 		"topics": []
+// 	},
+// 	{
+// 		"name": "SvelteKit TailwindCSS",
+// 		"description": "A SvelteKit template with TailwindCSS.",
+// 		"url": "",
+// 		"topics": []
+// 	}
+// ]
 ---
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
 		<h1 class="title">Projects</h1>
-		<p>Here are some of my open source projects:</p>
+		<!-- <p>Here are some products I've built:</p>
+		{
+			products.map((product) => (
+				<ProjectItem project={product} />
+			))
+		} -->
+		<p>Here is some of my open source projects:</p>
 		<ProjectList />
 	</div>
 </PageLayout>

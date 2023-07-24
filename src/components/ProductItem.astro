@@ -1,0 +1,21 @@
+---
+const { name, url, description, topics } = Astro.props;
+---
+
+<div class="mb-4 space-y-1">
+	<a class="cactus-link" href={url}>{name}</a>
+	{description ? <p class="italic">{description}</p> : null}
+	{
+		topics && topics.length > 0 ? (
+			<p class="font-style: italic text-gray-500">
+				Topics:{" "}
+				{topics.map((topic) => (
+					<span>
+						{topic}
+						{index !== array.length - 1 ? ", " : ""}
+					</span>
+				))}
+			</p>
+		) : null
+	}
+</div>
