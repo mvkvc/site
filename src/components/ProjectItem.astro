@@ -12,13 +12,7 @@ const { name, url, description, topics } = Astro.props;
 	{
 		topics && topics.length > 0 ? (
 			<p class="font-style: italic text-gray-500">
-				Topics:{" "}
-				{topics.map((topic, index, array) => (
-					<span>
-						{topic}
-						{index !== array.length - 1 ? ", " : ""}
-					</span>
-				))}
+				Tools: {topics.join(', ')}
 			</p>
 		) : null
 	}
