@@ -21,7 +21,6 @@ jobs:
         uses: withastro/action@v0
         with:
           node-version: 18
-          package-manager: pnpm
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
