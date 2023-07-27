@@ -3,7 +3,11 @@ const { name, url, description, topics } = Astro.props;
 ---
 
 <div class="mb-4 space-y-1">
-	<a class="cactus-link" href={url}>{name}</a>
+	{url ? 
+		<a class="cactus-link" href={url}>{name}</a> : 
+		<p>{name}</p>
+		<p class="italic">Coming soon</p>
+	}
 	{description ? <p class="italic">{description}</p> : null}
 	{
 		topics && topics.length > 0 ? (

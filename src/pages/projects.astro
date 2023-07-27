@@ -1,40 +1,45 @@
 ---
 import PageLayout from "@/layouts/Base";
+import ProjectItem from "@/components/ProjectItem";
 import ProjectList from "@/components/ProjectList";
-// import ProjectItem from "@/components/ProjectList";
-// import ProductItem from "@/components/ProjectItem";
 
 const meta = {
 	title: "Projects",
 	description: "My projects.",
 };
 
-// const products = [
-// 	{
-// 		"name": "SvelteKit TailwindCSS",
-// 		"description": "A SvelteKit template with TailwindCSS.",
-// 		"url": "",
-// 		"topics": []
-// 	},
-// 	{
-// 		"name": "SvelteKit TailwindCSS",
-// 		"description": "A SvelteKit template with TailwindCSS.",
-// 		"url": "",
-// 		"topics": []
-// 	}
-// ]
+const kimia_products = [
+	{
+		"name": "Downhost",
+		"url": "https://downhost.fly.dev",
+		"description": "A marketplace for code including standalone scripts, notebooks, libraries, and anything else you can think of.",
+		"topics": []
+	},
+	{
+		"name": "Critique",
+		"url": "https://critique.dev",
+		"description": "A service that predicts the likelihood that user-uploaded images are AI-generated, also available as an API.",
+		"topics": []
+	},
+	{
+		"name": "Context",
+		"url": null,
+		"description": "Seamlessly embed AI chat in your website which automatically knows your content.",
+		"topics": []
+	}
+];
 ---
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
 		<h1 class="title">Projects</h1>
-		<!-- <p>Here are some products I've built:</p>
+		<h2 class="title mb-4 text-xl">Products</h2>
 		{
-			products.map((product) => (
-				<ProjectItem project={product} />
+			kimia_products.map((product) => (
+				<ProjectItem name={product.name} url={product.url} description={product.description} topics={product.topics} />
 			))
-		} -->
-		<p>Here is some of my open source projects:</p>
+		}
+		<h2 class="title mb-4 text-xl">Open Source</h2>
 		<ProjectList />
 	</div>
 </PageLayout>
