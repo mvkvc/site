@@ -7,22 +7,31 @@ import ExperienceList from "@/components/ExperienceList";
 const talks = [
 	{
 		title: "Cell Driven Development",
-		link: null,
+		link: "https://github.com/einariii/cell_driven_development",
 		institution: "Toronto Elixir Meetup @ theScore",
 		location: "Toronto, Canada",
 		startDate: "June 2023",
+		description: "Demonstrating how to create Elixir Livebook Smart Cells using JavaScript and Vue.js with three custom examples."
 	},
 ];
 
 const experience = [
 	{
-		title: "Teaching Assistant",
-		institution: "Toronto Metropolitan University",
-		group: "Department of Mathematics",
-		location: "Toronto, Canada",
-		startDate: "Sept 2021",
-		endDate: "May 2022",
+		title: "Software Developer",
+		institution: "Admintel",
+		// group: "Department of Mathematics",
+		location: "Remote",
+		startDate: "July 2023",
+		endDate: "Dec 2023",
 	},
+	// {
+	// 	title: "Teaching Assistant",
+	// 	institution: "Toronto Metropolitan University",
+	// 	group: "Department of Mathematics",
+	// 	location: "Toronto, Canada",
+	// 	startDate: "Sept 2021",
+	// 	endDate: "May 2022",
+	// },
 	{
 		title: "Data Scientist",
 		institution: "Royal Bank of Canada",
@@ -58,7 +67,7 @@ const education = [
 		endDate: "May 2023",
 	},
 	{
-		title: "Bachelor of Science - Financial Mathematics, Economics Minor",
+		title: "BSc - Financial Mathematics, Economics Minor",
 		institution: "Toronto Metropolitan University ",
 		location: "Toronto, Canada",
 		startDate: "Sep 2014",
@@ -74,10 +83,10 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
-		<h1 class="title">About</h1>
+		<!-- <h1 class="title">About</h1>
 		<p>
-			My main tools are Elixir, Python, Ruby, and JavaScript, and whatever else I need to get the job done. I am most interested in full-stack web development, data engineering, and machine learning projects. I am always looking to push myself and learn new things from my projects and working with others.
-		</p>
+			The type of projects that most interest me are data engineering, machine learning, and cryptocurrency applications. My main tools are Elixir and Python and I also use among other things JavaScript and Rust.
+		</p> -->
 
 		<h2 class="title mb-4 text-xl">Talks</h2>
 		<ExperienceList experienceList={talks} />

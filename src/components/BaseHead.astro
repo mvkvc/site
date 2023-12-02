@@ -76,12 +76,13 @@ const updatePublic = () => {
 
 	// const scaleFactor = 22 / 1128;
 	const scaleFactor = 22 / 1200;
+	const maxBackgroundSize = 30;
 	// Checking window width
 	if (window.innerWidth > 900) {
 		body.style.backgroundImage = `url(${image})`;
 		body.style.backgroundPosition = "top left";
 		body.style.backgroundRepeat = "no-repeat";
-		body.style.backgroundSize = `${Math.min(window.innerWidth * scaleFactor, 100)}%`;
+		body.style.backgroundSize = `${Math.min(window.innerWidth * scaleFactor, 100, maxBackgroundSize)}%`;
 	} else {
 		body.style.backgroundImage = "none";
 	}
