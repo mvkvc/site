@@ -14,23 +14,30 @@ allPosts = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 <PageLayout meta={{ title: "Home" }}>
 	<section>
 		<h1 class="title mb-6">Home</h1>
-		<p class="mb-4"> Welcome! My name is Marko Vukovic and I am a software developer from Toronto. You can follow these links to see a list of my <a class="cactus-link" href="https://github.com/mvkvc">projects</a>, learn more <a class="cactus-link" href="/about">about</a> me or view my <a class="cactus-link" href="/resume_marko_vukovic.pdf">resume</a>.
-		<SocialList />
-	</section>
-	<section aria-label="Blog post list" class="mt-6">
-		<h2 class="title mb-4 text-xl">Recent Posts</h2>
-		<ul class="space-y-4 sm:space-y-2">
-			{
-				allPosts.map((p) => (
-					<li class="flex flex-col gap-x-2 sm:flex-row">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+		<p class="mb-4">
+			Welcome! My name is Marko Vukovic and I am a software developer from Toronto. You can follow
+			these links to see a list of my <a class="cactus-link" href="https://github.com/mvkvc"
+				>projects</a
+			>, learn more <a class="cactus-link" href="/about">about</a> me or view my <a
+				class="cactus-link"
+				href="/resume_marko_vukovic.pdf">resume</a
+			>.
+			<SocialList />
+		</p>
+		<section aria-label="Blog post list" class="mt-6">
+			<h2 class="title mb-4 text-xl">Recent Posts</h2>
+			<ul class="space-y-4 sm:space-y-2">
+				{
+					allPosts.map((p) => (
+						<li class="flex flex-col gap-x-2 sm:flex-row">
+							<PostPreview post={p} />
+						</li>
+					))
+				}
+			</ul>
+		</section>
 
-	<!-- <section class="mt-16">
+		<!-- <section class="mt-16">
 		<h2 class="title mb-4 text-xl">Technologies</h2>
 		<ul class="space-y-4 sm:space-y-2">
 			<li>
@@ -99,4 +106,5 @@ allPosts = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 			</li>
 		</ul>
 	</section> -->
+	</section>
 </PageLayout>
