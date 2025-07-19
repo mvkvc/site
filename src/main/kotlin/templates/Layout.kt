@@ -16,10 +16,6 @@ fun HTML.rootLayout(
             rel = "stylesheet",
             href = "/static/output.css",
         )
-        // link(
-        //     rel = "stylesheet",
-        //     href = "/static/prism.css"
-        // )
         link(
             rel = "stylesheet",
             href = "/static/prism-one-dark.css"
@@ -36,7 +32,6 @@ fun HTML.rootLayout(
             }
             div(classes = "flex-none") {
                 div(classes = "tabs") {
-                    a(classes = "tab tab-bordered", href = "/") { +"Home" }
                     a(classes = "tab tab-bordered", href = "/posts") { +"Posts" }
                     pages.forEach { page ->
                         a(classes = "tab tab-bordered", href = page.href) { +page.name }
