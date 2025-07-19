@@ -1,4 +1,3 @@
-
 val kotlin_version: String by project
 val kotlinx_html_version: String by project
 val logback_version: String by project
@@ -7,6 +6,7 @@ plugins {
     kotlin("jvm") version "2.1.10"
     id("io.ktor.plugin") version "3.2.2"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
+    id("org.jlleitschuh.gradle.ktlint") version "13.0.0"
 }
 
 group = "com.example.com"
@@ -16,12 +16,20 @@ application {
     mainClass = "io.ktor.server.netty.EngineMain"
 }
 
+ktor {
+    fatJar {
+        archiveFileName = "site.jar"
+    }
+}
+
 repositories {
     mavenCentral()
     maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers") }
 }
 
 dependencies {
+    implementation("org.commonmark:commonmark:0.21.0")
+    implementation("org.commonmark:commonmark-ext-yaml-front-matter:0.21.0")
     implementation("io.ktor:ktor-server-default-headers")
     implementation("io.ktor:ktor-server-resources")
     implementation("io.ktor:ktor-server-core")
@@ -32,6 +40,7 @@ dependencies {
     implementation("io.ktor:ktor-server-caching-headers")
     implementation("io.ktor:ktor-server-compression")
     implementation("io.ktor:ktor-server-netty")
+    implementation("io.ktor:ktor-server-status-pages")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.ktor:ktor-server-config-yaml")
     testImplementation("io.ktor:ktor-server-test-host")

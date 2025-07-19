@@ -15,10 +15,11 @@
         devShells.default = with pkgs; mkShell {
           buildInputs = [
             temurin-bin-17
+            bun
+            just
           ];
           shellHook = ''
             export JAVA_HOME="${pkgs.temurin-bin-17}
-            export ANDROID_HOME="$HOME/Android/Sdk"
           '';
         };
       }

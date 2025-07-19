@@ -14,10 +14,38 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.css.*
 import kotlinx.html.*
-import kotlinx.serialization.Serializable
+import org.commonmark.parser.Parser
+import org.commonmark.renderer.html.HtmlRenderer
 
 fun Application.configureTemplating() {
+    val markdownParser = Parser.builder().build()
+    val htmlRenderer = HtmlRenderer.builder().build()
+
+    fun renderMarkdown(content: String): String = htmlRenderer.render(markdownParser.parse(content))
+
     routing {
+        get("/markdown") {
+            val markdown =
+                """
+                # Hello Markdown!
+                
+                This is **simple** markdown rendering.
+                
+                ```kotlin
+                fun main() {
+                    println("Hello World!")
+                }
+                ```
+                """.trimIndent()
+
+            call.respondHtml {
+                body {
+                    unsafe {
+                        +renderMarkdown(markdown)
+                    }
+                }
+            }
+        }
         get("/html-dsl") {
             call.respondHtml {
                 body {
@@ -41,7 +69,7 @@ fun Application.configureTemplating() {
                 }
             }
         }
-        
+
         get("/html-css-dsl") {
             call.respondHtml {
                 head {
@@ -56,6 +84,7 @@ fun Application.configureTemplating() {
         }
     }
 }
+
 suspend inline fun ApplicationCall.respondCss(builder: CssBuilder.() -> Unit) {
-   this.respondText(CssBuilder().apply(builder).toString(), ContentType.Text.CSS)
+    this.respondText(CssBuilder().apply(builder).toString(), ContentType.Text.CSS)
 }
