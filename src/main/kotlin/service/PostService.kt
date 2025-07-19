@@ -31,12 +31,14 @@ class PostService(
             .listFiles()
             ?.firstOrNull {
                 it.extension == "md" &&
-                    it.nameWithoutExtension.endsWith("_$slug")
+                it.nameWithoutExtension.split("-").let { parts ->
+                    parts.size >= 2 && parts.last() == slug
+                }
             }?.let { parsePostFile(it) }
 
     private fun parsePostFile(file: File): Post? {
-        val parts = file.nameWithoutExtension.split("_")
-        if (parts.size != 2) return null
+        val parts = file.nameWithoutExtension.split("-")
+        if (parts.size < 2) return null
 
         try {
             val fileContent = file.readText()
@@ -47,13 +49,16 @@ class PostService(
             val frontMatter = visitor.data
 
             val title = frontMatter["title"]?.firstOrNull() ?: return null
-            val description = frontMatter["description"]?.firstOrNull() ?: return null
 
-            val date = LocalDate.parse(parts[0], DateTimeFormatter.ISO_DATE)
+            val datePart = parts[0]
+            val slug = parts.drop(1).joinToString("_")
+            val date = LocalDate.parse(
+                datePart.replace("_", "-"),
+                DateTimeFormatter.ofPattern("yy-MM-dd")
+            )
             return Post(
                 title = title,
-                description = description,
-                slug = parts[1],
+                slug = slug,
                 date = date.atStartOfDay().toInstant(ZoneOffset.UTC),
                 content = renderer.render(document),
             )

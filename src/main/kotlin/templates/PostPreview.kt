@@ -24,9 +24,6 @@ fun HTML.postListLayout(
                                 p(classes = "text-base-content/70 text-sm") {
                                     +"Published on ${post.date.atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))}"
                                 }
-                                p(classes = "text-base-content/90") {
-                                    +post.description
-                                }
                             }
                         }
                     }
