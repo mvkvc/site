@@ -1,4 +1,4 @@
-package com.example.com
+package vc.mvk.site
 
 import java.time.Instant
 

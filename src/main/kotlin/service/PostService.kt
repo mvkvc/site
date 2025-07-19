@@ -1,4 +1,4 @@
-package com.example.com
+package vc.mvk.site
 
 import org.commonmark.ext.front.matter.YamlFrontMatterExtension
 import org.commonmark.ext.front.matter.YamlFrontMatterVisitor

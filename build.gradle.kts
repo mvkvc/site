@@ -9,7 +9,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "13.0.0"
 }
 
-group = "com.example.com"
+group = "vc.mvk.site"
 version = "0.0.1"
 
 application {

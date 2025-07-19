@@ -1,6 +1,6 @@
-package com.example.com.service
+package vc.mvk.site.service
 
-import com.example.com.Page
+import vc.mvk.site.Page
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
 import java.io.File

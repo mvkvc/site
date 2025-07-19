@@ -1,6 +1,6 @@
-package com.example.com.templates
+package vc.mvk.site.templates
 
-import com.example.com.Page
+import vc.mvk.site.Page
 import kotlinx.html.*
 
 fun HTML.rootLayout(

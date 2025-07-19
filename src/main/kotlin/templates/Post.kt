@@ -1,7 +1,7 @@
-package com.example.com.templates
+package vc.mvk.site.templates
 
-import com.example.com.Page
-import com.example.com.Post
+import vc.mvk.site.Page
+import vc.mvk.site.Post
 import kotlinx.html.*
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter

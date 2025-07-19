@@ -1,4 +1,4 @@
-package com.example.com
+package vc.mvk.site
 
 import io.ktor.http.ContentType
 import io.ktor.http.CacheControl

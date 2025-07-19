@@ -1,10 +1,10 @@
-package com.example.com
+package vc.mvk.site
 
-import com.example.com.PostService
-import com.example.com.service.PagesService
-import com.example.com.templates.postLayout
-import com.example.com.templates.postListLayout
-import com.example.com.templates.rootLayout
+import vc.mvk.site.PostService
+import vc.mvk.site.service.PagesService
+import vc.mvk.site.templates.postLayout
+import vc.mvk.site.templates.postListLayout
+import vc.mvk.site.templates.rootLayout
 import io.ktor.http.*
 import io.ktor.http.content.*
 import io.ktor.resources.*
