@@ -12,6 +12,10 @@ fun HTML.rootLayout(
         meta(charset = "utf-8")
         meta(name = "viewport", content = "width=device-width, initial-scale=1")
         title(title)
+        link(rel = "apple-touch-icon", href = "/static/apple-touch-icon.png")
+        link(rel = "icon", type = "image/png", href = "/static/favicon-32x32.png")
+        link(rel = "icon", type = "image/png", href = "/static/favicon-16x16.png")
+        link(rel = "manifest", href = "/static/site.webmanifest")
         link(
             rel = "stylesheet",
             href = "/static/output.css",
