@@ -19,7 +19,7 @@ class PagesService(
         return file.takeIf { it.exists() }?.let { file ->
             val content = file.readText()
             Page(
-                name = file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
+                name = if (file.name == "README.md") "Home" else file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
                 href = "/${file.nameWithoutExtension}",
                 content = markdownRenderer.renderMarkdown(content),
             )
@@ -33,7 +33,7 @@ class PagesService(
             ?.mapNotNull { file ->
                 val content = file.readText()
                 Page(
-                    name = file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
+                    name = if (file.name == "README.md") "Home" else file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
                     href = "/${file.nameWithoutExtension}",
                     content = markdownRenderer.renderMarkdown(content),
                 )
