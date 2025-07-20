@@ -1,5 +1,5 @@
 ---
-title: What Will the Machines Write
+title: What will the machines write
 ---
 
 I've decided to start writing about my projects. This is the first post, so it's about the website it's posted on. It's a simple markdown-based site I built yesterday with Kotlin and Ktor. This is the first time I've used Kotlin, my usual go-to language is Elixir. I've been learning Rust, and I use Python/TypeScript when necessary.
