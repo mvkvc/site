@@ -5,6 +5,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/fly-deploy.yml'
+      - 'src/**'
+      - 'build.gradle.kts'
+      - 'gradle.properties'
+      - 'settings.gradle.kts'
+      - 'pages/**'
+      - 'posts/**'
+      - 'fly.toml'
 jobs:
   deploy:
     name: Deploy app
