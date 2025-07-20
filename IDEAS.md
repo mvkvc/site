@@ -12,3 +12,5 @@
 - Budgeting app
 - Lifting app
 - MCP
+- Scale to zero docker containers at home
+- Getting Ktor working with GraalVM
