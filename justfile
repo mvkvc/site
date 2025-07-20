@@ -3,14 +3,13 @@ help:
 
 deps:
     bun install
-    ./gradlew build
 
-build-css:
+build:
     bunx @tailwindcss/cli \
         -i ./src/main/resources/static/input.css \
         -o ./src/main/resources/static/output.css
 
-dev: build-css
+dev: build
     ./gradlew run
 
 format:

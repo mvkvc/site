@@ -1,9 +1,7 @@
 package vc.mvk.site
 
-import org.commonmark.ext.front.matter.YamlFrontMatterExtension
 import org.commonmark.ext.front.matter.YamlFrontMatterVisitor
-import org.commonmark.parser.Parser
-import org.commonmark.renderer.html.HtmlRenderer
+import vc.mvk.site.utils.MarkdownRenderer
 import java.io.File
 import java.time.LocalDate
 import java.time.ZoneOffset
@@ -12,18 +10,15 @@ import java.time.format.DateTimeFormatter
 class PostService(
     private val post_dir: String = "posts",
 ) {
-    private val parser =
-        Parser
-            .builder()
-            .extensions(listOf(YamlFrontMatterExtension.create()))
-            .build()
-    private val renderer = HtmlRenderer.builder().build()
+    private val markdownRenderer = MarkdownRenderer()
 
     fun getAllPosts(): List<Post> =
         File(post_dir)
             .listFiles()
             ?.filter { it.extension == "md" }
             ?.mapNotNull { file -> parsePostFile(file) }
+            ?.filter { isDev() || it.published }
+            ?.sortedByDescending { it.date }
             ?: emptyList()
 
     fun getPost(slug: String): Post? =
@@ -42,14 +37,14 @@ class PostService(
 
         try {
             val fileContent = file.readText()
-            val document = parser.parse(fileContent)
+            val document = markdownRenderer.parse(fileContent)
 
             val visitor = YamlFrontMatterVisitor()
             document.accept(visitor)
             val frontMatter = visitor.data
 
             val title = frontMatter["title"]?.firstOrNull() ?: return null
-
+            val published = frontMatter["published"]?.firstOrNull()?.toBoolean() ?: true
             val datePart = parts[0]
             val slug = parts.drop(1).joinToString("_")
             val date = LocalDate.parse(
@@ -58,12 +53,17 @@ class PostService(
             )
             return Post(
                 title = title,
+                published = published,
                 slug = slug,
                 date = date.atStartOfDay().toInstant(ZoneOffset.UTC),
-                content = renderer.render(document),
+                content = markdownRenderer.render(document),
             )
         } catch (e: Exception) {
             return null
         }
+    }
+
+    private fun isDev(): Boolean {
+        return System.getenv("KTOR_ENV") == "dev"
     }
 }

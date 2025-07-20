@@ -1,15 +1,13 @@
 package vc.mvk.site.service
 
 import vc.mvk.site.Page
-import org.commonmark.parser.Parser
-import org.commonmark.renderer.html.HtmlRenderer
+import vc.mvk.site.utils.MarkdownRenderer
 import java.io.File
 
 class PagesService(
     private val pagesDir: String = "pages",
 ) {
-    private val parser = Parser.builder().build()
-    private val renderer = HtmlRenderer.builder().build()
+    private val markdownRenderer = MarkdownRenderer()
 
     fun getPage(filename: String): Page? {
         val file =
@@ -23,7 +21,7 @@ class PagesService(
             Page(
                 name = file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
                 href = "/${file.nameWithoutExtension}",
-                content = renderer.render(parser.parse(content)),
+                content = markdownRenderer.renderMarkdown(content),
             )
         }
     }
@@ -37,7 +35,7 @@ class PagesService(
                 Page(
                     name = file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
                     href = "/${file.nameWithoutExtension}",
-                    content = renderer.render(parser.parse(content)),
+                    content = markdownRenderer.renderMarkdown(content),
                 )
             } ?: emptyList()
 }

@@ -16,7 +16,7 @@ fun HTML.postLayout(
         p(classes = "text-base-content/70 text-sm mb-8") {
             +"Published on ${post.date.atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))}"
         }
-        div {
+        div(classes = "prose prose-lg max-w-none") {
             unsafe {
                 +post.content
             }

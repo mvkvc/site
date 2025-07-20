@@ -30,6 +30,10 @@ repositories {
 dependencies {
     implementation("org.commonmark:commonmark:0.21.0")
     implementation("org.commonmark:commonmark-ext-yaml-front-matter:0.21.0")
+    implementation("org.commonmark:commonmark-ext-task-list-items:0.21.0")
+    implementation("org.commonmark:commonmark-ext-image-attributes:0.21.0")
+    implementation("org.commonmark:commonmark-ext-heading-anchor:0.21.0")
+    implementation("org.commonmark:commonmark-ext-gfm-tables:0.21.0")
     implementation("io.ktor:ktor-server-default-headers")
     implementation("io.ktor:ktor-server-resources")
     implementation("io.ktor:ktor-server-core")
