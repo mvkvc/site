@@ -1,3 +1,5 @@
 | Name | Description | Tools | Links |
 |------|-------------|------------|-------|
 | site | Personal website and blog | Kotlin, Ktor, TailwindCSS, DaisyUI | [Source](https://github.com/mvkvc/site) |
+| rager_rb | Library for working with generative models | Ruby, Async, AsyncHTTP, DrySchema | [Source](https://github.com/mvkvc/rager_rb) |
+| rager | Library for working with generative models | Elixir, Req, Ecto, Instructor | [Source](https://github.com/mvkvc/rager) |
