@@ -11,6 +11,15 @@
 - TODO app
 - Budgeting app
 - Lifting app
-- MCP
+- MCP thoughts
+- Creating an MCP server
 - Scale to zero docker containers at home
 - Getting Ktor working with GraalVM
+- Adding hybrid search bar for posts in the blog
+- Crafting personal software
+- Best Codium autocomplete outside of paid editors
+- Translating libraries with LLMs
+- VSCode is a swamp not a moat (Jim Keller quote about CUDA) applied to AI editors
+- How to get around LLM API rate limiting
+- Connecting to your local browser for doing search
+- Creating CLI utils with Rust w/ example `wd`
