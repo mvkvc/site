@@ -19,7 +19,7 @@
             just
           ];
           shellHook = ''
-            export JAVA_HOME="${pkgs.temurin-bin-17}
+            export JAVA_HOME="${pkgs.temurin-bin-17}"
           '';
         };
       }
