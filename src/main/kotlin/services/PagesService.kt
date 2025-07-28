@@ -10,32 +10,23 @@ class PagesService(
     private val markdownRenderer = MarkdownRenderer()
 
     fun getPage(filename: String): Page? {
-        val file =
-            when {
-                filename == "README.md" -> File(filename)
-                else -> File(pagesDir, filename)
-            }
-
-        return file.takeIf { it.exists() }?.let { file ->
-            val content = file.readText()
-            Page(
-                name = if (file.name == "README.md") "Home" else file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
-                href = "/${file.nameWithoutExtension}",
-                content = markdownRenderer.renderMarkdown(content),
-            )
-        }
+        val file = if (filename == "README.md") File(filename) else File(pagesDir, filename)
+        return if (file.exists()) fileToPage(file) else null
     }
 
     fun getAllPages(): List<Page> =
         File(pagesDir)
             .listFiles()
             ?.filter { it.isFile && it.extension == "md" }
-            ?.mapNotNull { file ->
-                val content = file.readText()
-                Page(
-                    name = if (file.name == "README.md") "Home" else file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
-                    href = "/${file.nameWithoutExtension}",
-                    content = markdownRenderer.renderMarkdown(content),
-                )
-            } ?: emptyList()
+            ?.mapNotNull { fileToPage(it) }
+            ?: emptyList()
+
+    private fun fileToPage(file: File): Page {
+        val content = file.readText()
+        return Page(
+            name = if (file.name == "README.md") "Home" else file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
+            href = "/${file.nameWithoutExtension}",
+            content = markdownRenderer.renderMarkdown(content),
+        )
+    }
 }

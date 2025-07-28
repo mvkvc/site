@@ -6,12 +6,12 @@ import kotlinx.html.*
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
-fun HTML.postLayout(
+fun HTML.post(
     post: Post,
     pages: List<Page>,
     content: BODY.() -> Unit,
 ) {
-    rootLayout(title = post.title, pages = pages) {
+    root(title = post.title, pages = pages) {
         h1(classes = "text-3xl font-bold text-base-content mb-6") { +post.title }
         p(classes = "text-base-content/70 text-sm mb-8") {
             +"Published on ${post.date.atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))}"

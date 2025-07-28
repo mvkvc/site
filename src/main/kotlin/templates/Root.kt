@@ -3,7 +3,7 @@ package vc.mvk.site.templates
 import vc.mvk.site.Page
 import kotlinx.html.*
 
-fun HTML.rootLayout(
+fun HTML.root(
     title: String = "mvkvc",
     pages: List<Page>,
     content: BODY.() -> Unit,
@@ -36,6 +36,7 @@ fun HTML.rootLayout(
             }
             div(classes = "flex-none") {
                 div(classes = "tabs") {
+                    a(classes = "tab tab-bordered", href = "/") { +"Home" }
                     a(classes = "tab tab-bordered", href = "/posts") { +"Posts" }
                     pages.forEach { page ->
                         a(classes = "tab tab-bordered", href = page.href) { +page.name }

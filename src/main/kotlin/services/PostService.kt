@@ -22,48 +22,32 @@ class PostService(
             ?: emptyList()
 
     fun getPost(slug: String): Post? =
-        File(post_dir)
-            .listFiles()
-            ?.firstOrNull {
-                it.extension == "md" &&
-                it.nameWithoutExtension.split("-").let { parts ->
-                    parts.size >= 2 && parts.last() == slug
-                }
-            }?.let { parsePostFile(it) }
+        File(post_dir).listFiles()
+            ?.firstOrNull { it.nameWithoutExtension.endsWith(slug) }
+            ?.let { parsePostFile(it) }
 
-    private fun parsePostFile(file: File): Post? {
+    private fun parsePostFile(file: File): Post? = runCatching {
+        val fileContent = file.readText()
+        val document = markdownRenderer.parse(fileContent)
+        val visitor = YamlFrontMatterVisitor().apply { document.accept(this) }
+        val frontMatter = visitor.data
         val parts = file.nameWithoutExtension.split("-")
-        if (parts.size < 2) return null
 
-        try {
-            val fileContent = file.readText()
-            val document = markdownRenderer.parse(fileContent)
-
-            val visitor = YamlFrontMatterVisitor()
-            document.accept(visitor)
-            val frontMatter = visitor.data
-
-            val title = frontMatter["title"]?.firstOrNull() ?: return null
-            val published = frontMatter["published"]?.firstOrNull()?.toBoolean() ?: true
-            val datePart = parts[0]
-            val slug = parts.drop(1).joinToString("_")
-            val date = LocalDate.parse(
-                datePart.replace("_", "-"),
-                DateTimeFormatter.ofPattern("yy-MM-dd")
-            )
-            return Post(
-                title = title,
-                published = published,
-                slug = slug,
-                date = date.atStartOfDay().toInstant(ZoneOffset.UTC),
-                content = markdownRenderer.render(document),
-            )
-        } catch (e: Exception) {
-            return null
-        }
-    }
+        Post(
+            title = frontMatter["title"]!!.first(),
+            published = frontMatter["published"]?.firstOrNull()?.toBoolean() ?: true,
+            slug = parts.drop(1).joinToString("_"),
+            date = LocalDate.parse(parts[0].replace("_", "-"), DateTimeFormatter.ofPattern("yy-MM-dd"))
+                .atStartOfDay().toInstant(ZoneOffset.UTC),
+            content = markdownRenderer.render(document),
+        )
+    }.getOrNull()
 
     private fun isDev(): Boolean {
         return System.getenv("KTOR_ENV") == "dev"
+    }
+
+    fun getLatestPost(): Post? {
+        return getAllPosts().firstOrNull()
     }
 }

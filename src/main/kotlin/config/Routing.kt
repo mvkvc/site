@@ -2,9 +2,10 @@ package vc.mvk.site
 
 import vc.mvk.site.PostService
 import vc.mvk.site.service.PagesService
-import vc.mvk.site.templates.postLayout
-import vc.mvk.site.templates.postListLayout
-import vc.mvk.site.templates.rootLayout
+import vc.mvk.site.templates.post
+import vc.mvk.site.templates.postPreview
+import vc.mvk.site.templates.root
+import vc.mvk.site.templates.home
 import io.ktor.http.*
 import io.ktor.http.content.*
 import io.ktor.resources.*
@@ -39,58 +40,56 @@ fun Application.configureRouting() {
             enableAutoHeadResponse()
         }
 
-        get("/posts") {
-            val posts = postService.getAllPosts()
-            val allPages = pagesService.getAllPages()
-
-            call.respondHtml {
-                postListLayout(posts = posts, pages = allPages)
-            }
-        }
-
         get("/posts/{slug}") {
             val slug = call.parameters["slug"] ?: return@get call.respond(HttpStatusCode.BadRequest)
-            val post = postService.getPost(slug)
-            val allPages = pagesService.getAllPages()
-
-            if (post != null) {
+            postService.getPost(slug)?.let { post ->
                 call.respondHtml {
-                    postLayout(post = post, pages = allPages) {}
+                    post(post = post, pages = pagesService.getAllPages()) {}
                 }
-            } else {
-                call.respond(HttpStatusCode.NotFound)
-            }
-        }
-
-        get("/blog/{slug}") {
-            val slug = call.parameters["slug"] ?: return@get call.respond(HttpStatusCode.BadRequest)
-            val post = postService.getPost(slug)
-            val allPages = pagesService.getAllPages()
-
-            if (post != null) {
-                call.respondHtml {
-                    postLayout(post = post, pages = allPages) {}
-                }
-            } else {
-                call.respond(HttpStatusCode.NotFound)
-            }
+            } ?: call.respond(HttpStatusCode.NotFound)
         }
 
         get("/{slug?}") {
-            val slug = call.parameters["slug"] ?: "README"
-            val page = pagesService.getPage("$slug.md")
+            val slug = call.parameters["slug"] ?: ""
             val allPages = pagesService.getAllPages()
-
-            if (page != null) {
-                call.respondHtml {
-                    rootLayout(title = page.name, pages = allPages) {
-                        unsafe {
-                            +page.content
+            
+            when (slug) {
+                "" -> {
+                    pagesService.getPage("README.md")?.let { page ->
+                        call.respondHtml {
+                            home(
+                                latestPost = postService.getLatestPost(),
+                                readmeContent = page.content,
+                                pages = allPages
+                            )
+                        }
+                    } ?: call.respond(HttpStatusCode.NotFound)
+                }
+                "posts" -> {
+                    val posts = postService.getAllPosts()
+                    call.respondHtml {
+                        root(title = "Posts", pages = allPages) {
+                            h1(classes = "text-3xl font-bold text-base-content mb-8 text-center") { +"Posts" }
+                            div(classes = "not-prose space-y-8") {
+                                div(classes = "space-y-6") {
+                                    posts.forEach { post ->
+                                        postPreview(post)
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-            } else {
-                call.respond(HttpStatusCode.NotFound)
+                else -> {
+                    pagesService.getPage("$slug.md")?.let { page ->
+                        call.respondHtml {
+                            root(title = page.name, pages = allPages) {
+                                h1(classes = "text-3xl font-bold text-base-content mb-8 text-center") { +page.name }
+                                unsafe { +page.content }
+                            }
+                        }
+                    } ?: call.respond(HttpStatusCode.NotFound)
+                }
             }
         }
 
