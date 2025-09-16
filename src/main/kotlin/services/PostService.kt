@@ -22,32 +22,33 @@ class PostService(
             ?: emptyList()
 
     fun getPost(slug: String): Post? =
-        File(post_dir).listFiles()
+        File(post_dir)
+            .listFiles()
             ?.firstOrNull { it.nameWithoutExtension.endsWith(slug) }
             ?.let { parsePostFile(it) }
 
-    private fun parsePostFile(file: File): Post? = runCatching {
-        val fileContent = file.readText()
-        val document = markdownRenderer.parse(fileContent)
-        val visitor = YamlFrontMatterVisitor().apply { document.accept(this) }
-        val frontMatter = visitor.data
-        val parts = file.nameWithoutExtension.split("-")
+    private fun parsePostFile(file: File): Post? =
+        runCatching {
+            val fileContent = file.readText()
+            val document = markdownRenderer.parse(fileContent)
+            val visitor = YamlFrontMatterVisitor().apply { document.accept(this) }
+            val frontMatter = visitor.data
+            val parts = file.nameWithoutExtension.split("-")
 
-        Post(
-            title = frontMatter["title"]!!.first(),
-            published = frontMatter["published"]?.firstOrNull()?.toBoolean() ?: true,
-            slug = parts.drop(1).joinToString("_"),
-            date = LocalDate.parse(parts[0].replace("_", "-"), DateTimeFormatter.ofPattern("yy-MM-dd"))
-                .atStartOfDay().toInstant(ZoneOffset.UTC),
-            content = markdownRenderer.render(document),
-        )
-    }.getOrNull()
+            Post(
+                title = frontMatter["title"]!!.first(),
+                published = frontMatter["published"]?.firstOrNull()?.toBoolean() ?: true,
+                slug = parts.drop(1).joinToString("_"),
+                date =
+                    LocalDate
+                        .parse(parts[0].replace("_", "-"), DateTimeFormatter.ofPattern("yy-MM-dd"))
+                        .atStartOfDay()
+                        .toInstant(ZoneOffset.UTC),
+                content = markdownRenderer.render(document),
+            )
+        }.getOrNull()
 
-    private fun isDev(): Boolean {
-        return System.getenv("KTOR_ENV") == "dev"
-    }
+    private fun isDev(): Boolean = System.getenv("KTOR_ENV") == "dev"
 
-    fun getLatestPost(): Post? {
-        return getAllPosts().firstOrNull()
-    }
+    fun getLatestPost(): Post? = getAllPosts().firstOrNull()
 }

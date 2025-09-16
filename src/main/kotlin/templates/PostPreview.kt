@@ -1,7 +1,11 @@
 package vc.mvk.site.templates
 
+import kotlinx.html.FlowContent
+import kotlinx.html.a
+import kotlinx.html.div
+import kotlinx.html.h2
+import kotlinx.html.p
 import vc.mvk.site.Post
-import kotlinx.html.*
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 

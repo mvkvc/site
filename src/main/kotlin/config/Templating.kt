@@ -1,19 +1,27 @@
 package vc.mvk.site
 
-import io.ktor.http.*
-import io.ktor.http.content.*
-import io.ktor.resources.*
-import io.ktor.server.application.*
-import io.ktor.server.html.*
-import io.ktor.server.http.content.*
-import io.ktor.server.plugins.cachingheaders.*
-import io.ktor.server.plugins.compression.*
-import io.ktor.server.plugins.defaultheaders.*
-import io.ktor.server.resources.*
-import io.ktor.server.response.*
-import io.ktor.server.routing.*
-import kotlinx.css.*
-import kotlinx.html.*
+import io.ktor.http.ContentType
+import io.ktor.server.application.Application
+import io.ktor.server.application.ApplicationCall
+import io.ktor.server.html.respondHtml
+import io.ktor.server.response.respondText
+import io.ktor.server.routing.get
+import io.ktor.server.routing.routing
+import kotlinx.css.Color
+import kotlinx.css.CssBuilder
+import kotlinx.css.Margin
+import kotlinx.css.backgroundColor
+import kotlinx.css.body
+import kotlinx.css.color
+import kotlinx.css.margin
+import kotlinx.css.px
+import kotlinx.html.body
+import kotlinx.html.h1
+import kotlinx.html.head
+import kotlinx.html.li
+import kotlinx.html.link
+import kotlinx.html.ul
+import kotlinx.html.unsafe
 import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
 
@@ -64,7 +72,7 @@ fun Application.configureTemplating() {
                     backgroundColor = Color.darkBlue
                     margin = Margin(0.px)
                 }
-                rule("h1.page-title") {
+                "h1.page-title" {
                     color = Color.white
                 }
             }

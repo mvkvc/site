@@ -1,6 +1,6 @@
-val kotlin_version: String by project
-val kotlinx_html_version: String by project
-val logback_version: String by project
+val kotlinVersion: String by project
+val kotlinxHtmlVersion: String by project
+val logbackVersion: String by project
 
 plugins {
     kotlin("jvm") version "2.1.10"
@@ -39,14 +39,14 @@ dependencies {
     implementation("io.ktor:ktor-server-core")
     implementation("io.ktor:ktor-server-host-common")
     implementation("io.ktor:ktor-server-html-builder")
-    implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinx_html_version")
+    implementation("org.jetbrains.kotlinx:kotlinx-html:$kotlinxHtmlVersion")
     implementation("org.jetbrains.kotlin-wrappers:kotlin-css-jvm:2025.6.4")
     implementation("io.ktor:ktor-server-caching-headers")
     implementation("io.ktor:ktor-server-compression")
     implementation("io.ktor:ktor-server-netty")
     implementation("io.ktor:ktor-server-status-pages")
-    implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
     implementation("io.ktor:ktor-server-config-yaml")
     testImplementation("io.ktor:ktor-server-test-host")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }

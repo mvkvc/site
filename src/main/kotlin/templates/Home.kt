@@ -1,7 +1,10 @@
 package vc.mvk.site.templates
 
+import kotlinx.html.HTML
+import kotlinx.html.div
+import kotlinx.html.h1
+import kotlinx.html.unsafe
 import vc.mvk.site.Post
-import kotlinx.html.*
 
 fun HTML.home(
     title: String = "mvkvc",
@@ -17,8 +20,10 @@ fun HTML.home(
                     postPreview(post)
                 }
             }
-            unsafe {
-                +readmeContent
+            div(classes = "text-center") {
+                unsafe {
+                    +readmeContent
+                }
             }
         }
     }

@@ -1,14 +1,13 @@
 package vc.mvk.site
 
-import io.ktor.http.ContentType
 import io.ktor.http.CacheControl
+import io.ktor.http.ContentType
 import io.ktor.http.content.CachingOptions
-import io.ktor.server.application.*
-import io.ktor.server.plugins.cachingheaders.*
-import io.ktor.server.plugins.compression.*
-import io.ktor.server.plugins.defaultheaders.*
-import kotlinx.css.*
-import kotlinx.html.*
+import io.ktor.server.application.Application
+import io.ktor.server.application.install
+import io.ktor.server.plugins.cachingheaders.CachingHeaders
+import io.ktor.server.plugins.compression.Compression
+import io.ktor.server.plugins.defaultheaders.DefaultHeaders
 
 fun Application.configureHTTP() {
     install(DefaultHeaders) {

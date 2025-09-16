@@ -1,7 +1,17 @@
 package vc.mvk.site.templates
 
+import kotlinx.html.BODY
+import kotlinx.html.HTML
+import kotlinx.html.a
+import kotlinx.html.body
+import kotlinx.html.div
+import kotlinx.html.head
+import kotlinx.html.link
+import kotlinx.html.main
+import kotlinx.html.meta
+import kotlinx.html.script
+import kotlinx.html.title
 import vc.mvk.site.Page
-import kotlinx.html.*
 
 fun HTML.root(
     title: String = "mvkvc",
@@ -22,7 +32,7 @@ fun HTML.root(
         )
         link(
             rel = "stylesheet",
-            href = "/static/prism-one-dark.css"
+            href = "/static/prism-one-dark.css",
         )
         script(src = "/static/prism.js") {}
     }

@@ -19,6 +19,7 @@
             just
           ];
           shellHook = ''
+            export TMPDIR="/tmp"
             export JAVA_HOME="${pkgs.temurin-bin-17}"
           '';
         };

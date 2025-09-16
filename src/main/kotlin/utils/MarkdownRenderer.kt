@@ -10,20 +10,25 @@ import org.commonmark.parser.Parser
 import org.commonmark.renderer.html.HtmlRenderer
 
 class MarkdownRenderer {
-    private val extensions = listOf(
-        YamlFrontMatterExtension.create(),
-        TaskListItemsExtension.create(),
-        ImageAttributesExtension.create(),
-        HeadingAnchorExtension.create(),
-        TablesExtension.create()
-    )
-    
-    private val parser = Parser.builder()
-        .extensions(extensions)
-        .build()
-    private val renderer = HtmlRenderer.builder()
-        .extensions(extensions)
-        .build()
+    private val extensions =
+        listOf(
+            YamlFrontMatterExtension.create(),
+            TaskListItemsExtension.create(),
+            ImageAttributesExtension.create(),
+            HeadingAnchorExtension.create(),
+            TablesExtension.create(),
+        )
+
+    private val parser =
+        Parser
+            .builder()
+            .extensions(extensions)
+            .build()
+    private val renderer =
+        HtmlRenderer
+            .builder()
+            .extensions(extensions)
+            .build()
 
     fun renderMarkdown(content: String): String {
         val document = parser.parse(content)
