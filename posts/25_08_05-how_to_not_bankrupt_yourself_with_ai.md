@@ -48,4 +48,4 @@ Here's my actual daily setup that keeps costs under control while providing mass
 - **Z.AI $3/month plan**: Claude Code access with GLM 4.5 and GLM 4.5 Air models (subsidized, but even at API prices across different providers it's still sustainable unlike Anthropic)
 - **OpenRouter**: Backup for when I hit limits (which takes a while with the above setup)
 
-This combination gives incredible value and lets me code freely without worrying about token costs.
+This combination gives incredible value and lets me code freely without worrying about token costs. The Z.AI plan has to be used from existing coding agents and so the Cerebras plan gives me both enough tokens for use of my own applications as well.
