@@ -38,25 +38,25 @@ fun HTML.root(
     }
 
     body(classes = "bg-base-100 text-base-content") {
-        div(classes = "navbar bg-base-200") {
+        div(classes = "navbar bg-base-100 border-b border-base-300 px-6") {
             div(classes = "flex-1") {
-                a(classes = "text-xl font-bold text-base-content pl-4", href = "/") {
+                a(classes = "text-xl font-bold text-base-content hover:text-primary transition-colors", href = "/") {
                     +"mvkvc"
                 }
             }
             div(classes = "flex-none") {
-                div(classes = "tabs") {
-                    a(classes = "tab tab-bordered", href = "/") { +"Home" }
-                    a(classes = "tab tab-bordered", href = "/posts") { +"Posts" }
+                div(classes = "flex gap-6") {
+                    a(classes = "link link-hover text-base-content/80 hover:text-base-content transition-colors", href = "/") { +"Home" }
+                    a(classes = "link link-hover text-base-content/80 hover:text-base-content transition-colors", href = "/posts") { +"Posts" }
                     pages.forEach { page ->
-                        a(classes = "tab tab-bordered", href = page.href) { +page.name }
+                        a(classes = "link link-hover text-base-content/80 hover:text-base-content transition-colors", href = page.href) { +page.name }
                     }
                 }
             }
         }
 
-        main(classes = "container mx-auto px-6 py-16 max-w-4xl") {
-            div(classes = "prose prose-lg max-w-none") {
+        main(classes = "container mx-auto px-6 py-16 max-w-4xl min-h-screen") {
+            div(classes = "prose prose-neutral max-w-none prose-headings:text-base-content prose-p:text-base-content/90 prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-base-content prose-img:rounded-lg prose-img:shadow-md") {
                 this@body.content()
             }
         }

@@ -1,5 +1,6 @@
 ---
 title: Reimplementing my to-do list
+description: Building a personal kanban-style to-do list with React frontend and Rust backend using Cline.
 ---
 
 For the applications I use often, I always think about how hard it would be to recreate them. Now, with generative models, it's more fun to do and also a good benchmark to see how good the agents are getting. As I am working on my own coding agent, these kinds of applications are also great to evaluate performance on self-contained projects. While I work on getting that out, I wanted to start using my own kanban-style to-do list without having to transfer the data over later, so I used Cline to reimplement it.

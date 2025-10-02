@@ -45,6 +45,7 @@ class PostService(
                         .atStartOfDay()
                         .toInstant(ZoneOffset.UTC),
                 content = markdownRenderer.render(document),
+                description = frontMatter["description"]?.firstOrNull(),
             )
         }.getOrNull()
 

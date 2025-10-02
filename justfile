@@ -10,7 +10,7 @@ build:
         -o ./src/main/resources/static/output.css
 
 dev: build
-    ./gradlew run --continuous
+    ./gradlew run
 
 format:
     ./gradlew ktlintFormat

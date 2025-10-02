@@ -8,4 +8,5 @@ data class Post(
     val slug: String,
     val date: Instant,
     val content: String,
+    val description: String? = null,
 )

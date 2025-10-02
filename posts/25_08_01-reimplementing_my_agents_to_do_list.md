@@ -1,5 +1,6 @@
 ---
 title: Reimplementing my agent's to-do list
+description: Creating an MCP server and CLI for hierarchical task tracking using Python, FastMCP, and SQLite.
 ---
 
 Recently on X I saw someone describing their workflow with [eyaltoledano/claude-task-master](https://github.com/eyaltoledano/claude-task-master) where they left their agent generating and completing tasks in a loop. While it wasn't for me, it made me want to be more intentional with tasks and planning when coding with agents.

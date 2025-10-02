@@ -1,5 +1,6 @@
 ---
 title: Hello RAGer
+description: Introducing RAGer, a thin library for generative models that abstracts over providers and modalities in Ruby and Elixir.
 ---
 
 I've been working on using generative models in my day-to-day tasks and trying new things that weren't possible before. When looking at existing libraries, the big one is LangChain, which I've used before and personally didn't like because it felt like I was writing a LangChain program instead of a Python program. There are newer ones in Python and most languages have their own version, but they usually take a lot of inspiration from LangChain. I would like to give credit to [567-labs/instructor](https://github.com/567-labs/instructor) in Python and [thmsmlr/instructor_ex](https://github.com/thmsmlr/instructor_ex) in Elixir, as these focus on structured outputs with LLMs and work nicely with your existing schemas and code.

@@ -1,5 +1,6 @@
 ---
 title: What will the machines write
+description: Exploring language characteristics for building software with generative models and why I'm trying Kotlin.
 ---
 
 I've decided to start writing about my projects. This is the first post, so it's about the website it's posted on. It's a simple markdown-based site I built yesterday with Kotlin and Ktor. This is the first time I've built something with Kotlin compared to my usual go-to language which is Elixir. I also have been learning Rust and use Python/TypeScript when necessary.
