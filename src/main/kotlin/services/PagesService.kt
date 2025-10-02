@@ -10,12 +10,15 @@ class PagesService(
     private val markdownRenderer = MarkdownRenderer()
 
     fun getPage(filename: String): Page? {
-        val file = if (filename == "README.md") File(filename) else File(pagesDir, filename)
+        val file = when {
+            filename.startsWith("header/") -> File(pagesDir, filename)
+            else -> File(pagesDir, filename)
+        }
         return if (file.exists()) fileToPage(file) else null
     }
 
     fun getAllPages(): List<Page> =
-        File(pagesDir)
+        File(pagesDir, "header")
             .listFiles()
             ?.filter { it.isFile && it.extension == "md" }
             ?.mapNotNull { fileToPage(it) }
@@ -24,7 +27,7 @@ class PagesService(
     private fun fileToPage(file: File): Page {
         val content = file.readText()
         return Page(
-            name = if (file.name == "README.md") "Home" else file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
+            name = file.nameWithoutExtension.replaceFirstChar { it.uppercase() },
             href = "/${file.nameWithoutExtension}",
             content = markdownRenderer.renderMarkdown(content),
         )

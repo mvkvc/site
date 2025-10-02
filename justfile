@@ -2,15 +2,15 @@ help:
     @just --list
 
 deps:
-    bun install
+    npm install
 
 build:
-    bunx @tailwindcss/cli \
+    npx @tailwindcss/cli \
         -i ./src/main/resources/static/input.css \
         -o ./src/main/resources/static/output.css
 
 dev: build
-    ./gradlew run
+    ./gradlew run --continuous
 
 format:
     ./gradlew ktlintFormat
@@ -27,4 +27,4 @@ docker-build:
     docker build -t mvkvc/site:latest .
 
 docker-run:
-    docker run -it --network host mvkvc/site:latest
+    docker run -it mvkvc/site:latest

@@ -2,7 +2,6 @@ package vc.mvk.site.templates
 
 import kotlinx.html.BODY
 import kotlinx.html.HTML
-import kotlinx.html.a
 import kotlinx.html.div
 import kotlinx.html.h1
 import kotlinx.html.p

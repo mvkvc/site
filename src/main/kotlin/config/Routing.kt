@@ -55,7 +55,7 @@ fun Application.configureRouting() {
 
             when (slug) {
                 "" -> {
-                    pagesService.getPage("README.md")?.let { page ->
+                    pagesService.getPage("home.md")?.let { page ->
                         call.respondHtml {
                             home(
                                 latestPost = postService.getLatestPost(),
@@ -81,11 +81,12 @@ fun Application.configureRouting() {
                     }
                 }
                 else -> {
-                    pagesService.getPage("$slug.md")?.let { page ->
+                    val page = pagesService.getPage("header/$slug.md") ?: pagesService.getPage("$slug.md")
+                    page?.let {
                         call.respondHtml {
-                            root(title = page.name, pages = allPages) {
-                                h1(classes = "text-3xl font-bold text-base-content mb-8 text-center") { +page.name }
-                                unsafe { +page.content }
+                            root(title = it.name, pages = allPages) {
+                                h1(classes = "text-3xl font-bold text-base-content mb-8 text-center") { +it.name }
+                                unsafe { +it.content }
                             }
                         }
                     } ?: call.respond(HttpStatusCode.NotFound)

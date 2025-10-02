@@ -15,12 +15,14 @@
         devShells.default = with pkgs; mkShell {
           buildInputs = [
             temurin-bin-17
-            bun
+            nodejs_22
             just
+            stdenv.cc.cc.lib
           ];
           shellHook = ''
             export TMPDIR="/tmp"
             export JAVA_HOME="${pkgs.temurin-bin-17}"
+            export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
           '';
         };
       }

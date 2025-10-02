@@ -1,0 +1,5 @@
+---
+title: Building a repository of prompts
+---
+
+Everyone has their own style of coding that they prefer, and I think a lot of the friction currently is that people are not specifying their preferences when it comes to style or architecture and then having to go in and manually change a lot. For myself I know that I prefer specific thigns ex server side rendered websites with tailwind and htmx by default unless a first class solution like liveview or hotwire. Ultimately you have to maintain the code that LLMs write no matter how many agents in parallel you need to be able to understand and jump in also you want to want to jump in. If they can follow instructions to genreate any type of code why not make it maintable and enjoyable for you to work with? For that reason I have created a repository of rules organized by topic that I can bring from project to project.

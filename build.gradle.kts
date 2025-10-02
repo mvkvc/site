@@ -47,6 +47,7 @@ dependencies {
     implementation("io.ktor:ktor-server-status-pages")
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
     implementation("io.ktor:ktor-server-config-yaml")
+    implementation("io.ktor:ktor-server-auto-head-response")
     testImplementation("io.ktor:ktor-server-test-host")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }
